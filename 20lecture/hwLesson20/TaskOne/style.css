@@ -37,7 +37,7 @@ body {
 .mainNav,
 .mainFooter {
   width: 100vw;
-  height: 12vh;
+  height: 8vh;
 }
 
 .navBtn {
@@ -63,6 +63,41 @@ body {
   margin: 12px;
 }
 
+#gallery {
+  
+}
+
+#navGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap:12px;
+  width: 100vw;
+  min-height: 8vh;
+  justify-content: center;
+  align-items: center; 
+}
+
+#navGallery>a{
+  border: solid black 1px;
+  border-radius: 10%;
+  text-decoration: none;
+  color: black;
+  width: 80px;
+  height: 25px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navGallery>a:hover {
+  cursor: pointer;
+  background-color: red;
+  font-weight: bold;
+}
+
+.albumContainer {
+  display:none;
+}
 
 .navBtn:hover {
   cursor: pointer;
