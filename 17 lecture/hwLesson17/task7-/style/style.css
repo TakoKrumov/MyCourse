@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    width: 100vw;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #inputAndSubmit {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  body #list {
+    text-align: center;
+    padding: 15px;
+    min-width: 100vw;
+    background-color: lightgrey;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  #groceryList {
+    font-size: 16px;
+    font-weight: normal;
+    list-style: decimal;
+    padding: 10px;
+   display: flex;
+   flex-direction: column;
+  }

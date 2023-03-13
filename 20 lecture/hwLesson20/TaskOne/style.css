@@ -1,0 +1,70 @@
+@import url(./reset.css);
+
+* {
+  box-sizing: content-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #a37e93,
+    #9d7d99,
+    #957d9e,
+    #8b7ea3,
+    #7f7fa7,
+    #7281a8,
+    #6683a8,
+    #5a85a5,
+    #53879e,
+    #528896,
+    #55888d,
+    #5c8784
+  );
+}
+
+
+.mainNav,
+.mainBody,
+.mainFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  gap: 25px;
+}
+.mainNav,
+.mainFooter {
+  width: 100vw;
+  height: 12vh;
+}
+
+.navBtn {
+  min-width: 130px;
+  min-height: 25px;
+  max-height: 60px;
+
+}
+
+.navBtn:hover {
+  cursor: pointer;
+  background-color: lightyellow;
+}
+
+.mainBody {
+  width: 100vw;
+  min-height: 76vh;
+  padding: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.fetchImage {
+  min-width: 250px;
+  min-height: 450px;
+  max-width: 500px;
+  max-height: 900px;
+  border: 3px black solid;
+  border-radius: 12%;
+}

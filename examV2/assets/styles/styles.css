@@ -1,0 +1,163 @@
+@import url("./reset.css");
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+header {
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+header > nav {
+    display: flex;
+    gap: 25px
+}
+
+header nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    padding: 25px 10px;
+    border-radius: 50%;
+    background-color: bisque;
+}
+
+header nav a:hover {
+    cursor: pointer;
+    color: black;
+    transition: color ease-in-out 1000ms;
+}
+
+main {
+    /* height: 90%; */
+    background-color: bisque;
+}
+
+footer {
+    text-align: center;
+    padding: 2.5%;
+    background-color: burlywood;
+}
+
+/* RECIPES ALL */
+
+.filterRecipes {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.recipeContainer, .favouriteRecipeContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* RECIPE CARD */
+
+.recipeWrapper {
+    display: grid;
+    width: 250px;
+    height: 400px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 250px repeat(3, 1fr);
+    grid-template-areas: 
+    "a a"
+    "b b"
+    "c c"
+    "d e";
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 5px 10px;
+}
+
+.recipeWrapper a {
+    grid-area: a;
+}
+
+.recipeWrapper a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.titleCard {
+    grid-area: b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingradientsCard {
+    grid-area: c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toFavourite {
+    grid-area: d;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.cook {
+    grid-area: e;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+/* FORM ADD */ 
+
+.createRecipe, .editProfile {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 25px auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* table */
+
+#profile h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+
+table {
+    width: 50%;
+    margin: auto;
+    border: 3px solid aliceblue;
+}
+
+table td, table th {
+    border: 3px solid salmon;
+    text-align: center;
+}
+
+button.removeFromFav {
+    background-color: red;
+}

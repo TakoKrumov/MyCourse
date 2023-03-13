@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #dqdo{
+            width: 500px;
+            height: 500px;
+            background-color: khaki;
+        }
+        #tatko{
+            width: 400px;
+            height: 400px;
+            background-color: blueviolet;
+        }
+        #bebe{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <a href="https://www.abv.bg/">Click me if you dare!</a>
+    <div id="dqdo">
+        <div id="tatko">
+            <div id="bebe">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let link = document.getElementsByTagName('a')[0];
+        let dqdo = document.getElementById('dqdo');
+        let tatko = document.getElementById('tatko');
+        let bebe = document.getElementById('bebe');
+
+        function sayHi(event) {
+            event.stopImmediatePropagation();
+            console.log('Hi!', this.id);
+        }
+
+
+        function sayHi1(event) {
+            event.stopPropagation();
+            console.log('Hi1!', this.id);
+        }
+
+        
+
+        dqdo.addEventListener('click',sayHi);
+        tatko.addEventListener('click',sayHi);
+        bebe.addEventListener('click',sayHi);
+        bebe.addEventListener('click',sayHi1);
+
+        link.addEventListener('click',function (e) {
+            e.preventDefault();
+        });
+
+    </script>
+
+</body>
+</html>

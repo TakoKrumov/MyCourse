@@ -1,0 +1,65 @@
+/* POPULAR SECTION */
+
+.popular-section {
+    margin-top: 80px;
+}
+
+.popular-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.popular-links-wrapper {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.popular-links-wrapper a {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--text-grey-color);
+    padding: 10px;
+    border: 1px solid var(--main-grey-color);
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.popular-links-wrapper a:hover {
+    border-color: var(--text-grey-color);
+}
+
+/* INFO SECTION */
+
+.section-info {
+    margin-top: 10px;
+    background-color: var(--main-grey-color);
+}
+
+.section-info-articles {
+    padding: 80px 15px;
+    margin: 0px 160px;
+    
+}
+
+.section-info-articles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.section-info-articles article {
+    width: 30%;
+}
+
+.section-info-articles article h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-info-articles article p {
+    margin-top: 20px;
+    font-size: 18px;
+}

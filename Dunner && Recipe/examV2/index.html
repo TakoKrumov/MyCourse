@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <script src="./recipes.js"></script>
+    <script src="./models/recipe.js"></script>
+    <script src="./models/recipeManager.js"></script>
+    <script></script>
+    <title>Recipes</title>
+</head>
+<body>
+    <header>
+        <img width="75" src="./assets/images/logo.png" alt="logo recipes page">
+        <nav>
+            <a href="#all">Всички Рецепти</a>
+            <a href="#favourite">Любими Рецепти</a>
+            <a href="#create">Създай Рецепта</a>
+            <a href="#profile">Моят Профил</a>
+        </nav>
+        <img width= "75" src="./assets/images/guest.png" class="profilePic">
+    </header>
+    <main>
+        <section id="all" class="section">
+            <form class="filterRecipes">
+                <input type="text" placeholder="Search By Recipe Name"/>
+                <select name="ingredients" id="ingredients">
+                    <option selected>Choose Ingradient</option>
+                </select>
+            </form>
+            <div class="recipeContainer">
+                
+            </div>
+        </section>
+        <section id="favourite" class="section">
+            <div class="favouriteRecipeContainer">
+
+            </div>
+        </section>
+        <section id="create" class="section">
+            <form class="createRecipe">
+                <input type="text" name="title" placeholder="Title for recipe">
+                <input type="text" name="ingredients" placeholder="ingredients">
+                <input type="text" name="href" placeholder="URL Link">
+                <input type="file" name="thumbnail" accept="image/*" placeholder="URL Img">
+                <input type="submit"/>
+            </form>
+        </section>
+        <section id="profile" class="section">
+            <form class="editProfile">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="profileName">
+                <label for="age">Age:</label>
+                <input type="number" name="age" class="profileAge">
+                <label for="address">Address:</label>
+                <input type="text" name="address" class="profileAddress">
+                <label for="imageURL">Profile Pic URL:</label>
+                <input type="file" accept="image/*" name="imgURL" class="profilePic">
+                <input type="submit" value="Edit Profile">
+            </form>
+
+            <h2> Cooked Meals:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Meal</th>
+                        <th>Cooked Count</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="error" class="section">Няма такава страница</section>
+    </main>
+    <footer>
+        <h2>Website created by: Alexander Ivanov</h2>
+        <p>All rights reserverd &#169; 2023</p>
+    </footer>
+    <script src="./viewController.js"></script>
+</body>
+</html>

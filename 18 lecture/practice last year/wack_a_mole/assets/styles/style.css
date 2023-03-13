@@ -1,0 +1,102 @@
+@keyframes showMole {
+    from {
+        top: 250px;
+    }
+    to {
+        top:0;
+    }
+}
+
+@keyframes wackHammer {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(-45deg);
+    }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+}
+
+.main-contaier {
+    width: 1270px;
+    height: 720px;
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.mole-container {
+    width: 200px;
+    height: 200px;
+    position: absolute;            
+    overflow: hidden;
+}
+
+.mole-container.first {
+    top: 200px;
+    left: 108px;
+}
+.mole-container.second {
+    top: 200px;
+    left: 540px;
+}
+.mole-container.third {
+    top: 200px;
+    left: 975px;
+}
+.mole-container.fourth {
+    width: 250px;
+    height: 250px;
+    top: 410px;
+    left: 190px;
+}
+.mole-container.fifth {
+    width: 250px;
+    height: 250px;
+    top: 410px;
+    left: 850px;
+}
+
+.mole {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../images/mole-252849.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    top: 250px;
+    /* animation: showMole 600ms infinite alternate; */
+}
+
+#hammer {
+    width: 200px;
+    height: 250px;
+    background: url("../images/hammer.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+    transform-origin: 100% 100%;            
+}
+
+#score {
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 116px;
+    left: 92px;
+    font-size: 30px;
+    background-color: #8BC74E;
+}

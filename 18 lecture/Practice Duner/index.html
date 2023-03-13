@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/reset.css" />
+    <link rel="stylesheet" href="./assets/style/cardStyle.css" />
+    <script src="./assets/item data/data.js"></script>
+    <script src="./utilitys/dunerManager.js"></script>
+    <script src="./utilitys/helper.js"></script>
+    <script src="./utilitys/cartManager.js"></script>
+
+    <title>Duner Fatazy</title>
+
+    <style>
+      header {
+        height: 60px;
+
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .page {
+        min-height: 75vh;
+      }
+
+      #menu {
+        background-color: blueviolet;
+      }
+
+      #cart {
+        background-color: khaki;
+      }
+
+      #order {
+        background-color: green;
+      }
+
+      #menu .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      #deliveryForm {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #order .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img width="50" src="./assets/images/logo.jpeg" alt="" />
+      <a href="#menu">Menu</a>
+      <a href="#cart">
+        <img width="50" src="./assets/images/cart.jpeg" alt="" />
+      </a>
+    </header>
+    <main>
+      <div class="page" id="menu">
+        <input type="text" id="searchInput" placeholder="What do you want?" />
+        <div class="container"></div>
+      </div>
+
+      <div class="page" id="cart">
+        <div class="container"></div>
+      </div>
+
+      <div class="page" id="order">
+        <div class="container">
+          <form id="deliveryForm">
+            <input type="text" name="name" placeholder="name" />
+            <input type="text" name="phone" placeholder="phone" />
+            <textarea
+              name="address"
+              cols="30"
+              rows="10"
+              placeholder="address"
+            ></textarea>
+            <input type="submit" value="Deliver" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      /*
+         We relocated this script in ViewControler,because of this
+         change when we put window.addEventListener('someEvents',someCallBack) 
+         we changed it to => window.addEventListener('someEvents',this.someCallBack) 
+
+      */
+      // // Check for wich window is open by using href value #name
+      // function handleHashChange () {
+      //     // location is part of BOM window.
+      //     let hash = window.location.hash.slice(1) || 'menu';
+
+      //     const pageIds = ['menu','cart','order'];
+
+      //     pageIds.forEach (id => {
+      //         let page = document.getElementById(id);
+
+      //         if (hash === id) {
+      //             page.style.display = 'block';
+      //         } else {
+      //             page.style.display = 'none';
+      //         }
+      //     });
+      // }
+      // window.addEventListener('hashchange',handleHashChange);
+      // window.addEventListener('load',handleHashChange);
+      // // end of checking => this give us SPA(single page application)
+    </script>
+    <script src="./viewControl.js"></script>
+    <!-- adding viewControl because of the control flow
+                                                  and we need the created elements above so we can 
+                                                  work with them 
+                                             -->
+    <!--  -->
+  </body>
+</html>

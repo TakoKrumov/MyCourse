@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* css wonderland */
+
+      p {
+        background-color: blueviolet;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="firstParagraph" style="background-color: blue">Hello, world!</p>
+    <p>Hello, world 2!</p>
+    <p id="lastParagraph">Hello, world 3!</p>
+
+    <!-- This is an example for a Node (bad practice) -->
+    Bahur, koito ne e opakovan!
+
+    <script>
+      let photos = [
+        "https://img-9gag-fun.9cache.com/photo/a6q1pj8_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aGEz700_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aVbxvbv_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aGEzppG_460swp.webp",
+      ];
+      //           callback,   how much to wait - time after which the callback will be executed (ms)
+      // setTimeout(<param1>, <param2>);
+
+      let random = Math.floor(Math.random() * photos.length);
+      let newImage = document.createElement("img");
+      document.body.append(newImage);
+      newImage.width = 250;
+      newImage.src = photos[random];
+
+      let createImage = () => {
+        let random = Math.floor(Math.random() * photos.length);
+        newImage.src = photos[random];
+        console.log("Inside timer");
+        console.timeEnd("TIMER: ");
+      };
+      console.log("Before timer");
+      setTimeout(createImage, 1000);
+      console.time("TIMER: ");
+      // setInterval(createImage, 1000);
+
+      console.log("After timer");
+    </script>
+  </body>
+</html>

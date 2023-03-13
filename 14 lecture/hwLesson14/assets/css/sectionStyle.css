@@ -1,0 +1,238 @@
+.mainBodyUpper {
+    display: flex;
+    width: 100%;
+    height:800px;
+    background: url('../images/sp087_ss23_valentines-day-mh-lg-ftw-w-d_tcm221-988359.jpg');
+    position: relative;
+}
+
+.container{
+    position: absolute;
+    height: 600px;
+    width:800px;
+    top: 60px;
+    left:100px
+}
+
+.mainBodyUpper h1{
+    position: absolute;
+    font:bold 40px  Helvetica, Arial, sans-serif;
+    color:var(--main-text-color);
+    top:90px;
+    left:40px
+}
+
+.mainBodyUpper p{
+    position: absolute;
+    font:18px Helvetica, Arial, sans-serif;
+    color:var(--main-text-color);
+    top: 114px;
+    left:40px;
+    margin: 20px 0;
+}
+
+.familyButtons{   
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:200px;
+    margin: 20px;
+    
+}
+
+.familyButtons button{
+    height: 50px;
+    width: 150;
+    margin: 20px;
+    cursor: pointer;
+    background-color: var(--main-text-color);
+    box-shadow: 10px 5px 5px black;
+    font:bold 16px Helvetica, Arial, sans-serif;
+}
+
+.familyButtons button:hover{
+    
+    color:grey;
+   
+}
+.choices{
+    margin: 20px 50px;
+}
+.midHeader>h1{
+    font: italic 40px Helvetica, Arial, sans-serif;
+}
+
+.midHeader>a{
+    font: 14px Helvetica, Arial, sans-serif;
+    color:black;
+}
+
+.choicesRow{
+      
+    
+}
+
+.choicesRow>ul{
+    display: flex;
+    
+}
+
+.choicesRow>ul>li{
+    display: flex;
+    flex-direction: column;   
+    border:1px transparent solid; 
+    position: relative;
+    cursor: pointer;
+}
+.choicesRow li:not(:last-child){
+    margin-right:20px ;
+}
+.choicesRow>ul>li:hover{
+    border-color:black;
+}
+
+.choicesRow>ul>li>p{
+    margin-left: 5px;
+}
+
+.choicesRow img{  
+    width: 100%;     
+}
+
+.description {
+    color:grey;
+    font:14px Helvetica, Arial, sans-serif;
+}
+
+.productName{
+    font:15px Helvetica, Arial, sans-serif;
+    color:black;
+}
+
+.choicesRow span{
+    position: absolute;
+    bottom: 34px;;
+    left:10px;
+    background-color: white;
+    padding: 2px 4px;
+    font-size: 14px;
+    transition: 0.1s;
+}
+
+.choicesRow>ul>li:hover .prize{
+    bottom:40px;
+}
+
+.categoriesMain{
+    display:flex;   
+    margin: 80px 0;
+    
+}
+
+.categories{
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    margin:0 100px;
+    flex:1;
+    justify-content: space-between;
+}
+
+.categories>div {
+    display: flex;
+    
+    min-height: 100px;
+    margin-right: 20px;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    text-decoration: underline;
+    text-align: center;
+    background-color: #eceff1;
+    padding-bottom: 10px;
+    font: bold 18px Helvetica, Arial, sans-serif;
+}
+
+.categories>div:hover{
+    cursor: pointer; 
+    text-decoration: none;  
+    color:white;
+    background-color: black;
+}
+
+.categories>div>img{
+
+}
+
+.aboveFooter{
+    width: 100%;
+    background-color: yellow;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboveFooter>div{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display:flex;
+    width: 430px;
+    height: 63px;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+
+.aboveFooter>button{
+    height:47px;   
+    width: 300px;  
+    background-color: black; 
+    box-shadow: 10px 10px  0px 0px grey;
+}
+.aboveFooter>button>div{
+    margin-left: 25px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+
+.aboveFooter button:hover{
+    cursor: pointer; 
+}
+
+.aboveFooter button:hover>div{    
+    color:grey;     
+}
+.popular{
+    width: 100%;
+    height: 113px;
+}
+
+.popular>div{
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.popular>ul{
+    display: flex;
+    justify-content: center;
+}
+
+.popular>ul>li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 40px;
+    border:1px  lightgrey solid;
+    padding: 1px 5px;
+    margin: 10px;
+}
+
+.popular>ul>li:hover{
+    cursor: pointer;
+    border:1px  black solid;
+}

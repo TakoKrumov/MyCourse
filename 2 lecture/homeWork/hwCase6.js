@@ -1,0 +1,11 @@
+let a1 = 17;
+let a2 = 19;
+let a3 = 21;
+let helper = null;
+ helper = a2;
+ a2 = a3;
+ a3 = a1;
+ a1 = helper;
+console.log("a1 =", a1);
+console.log("a2 =", a2);
+console.log("a3 =", a3);

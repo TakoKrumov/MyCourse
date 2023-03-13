@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input" name="firstInput" placeholder="firstInput">
+    <input type="text" class="input" name="secondInput" placeholder="secondInput">
+    <button type="submit" id="firstSubmit">SUBMIT</button>
+    <script >
+        
+        let submit = document.getElementById('firstSubmit');
+        let input = document.getElementsByClassName('input');
+        submit.addEventListener('click',checkLength);
+        function checkLength () {
+            
+            for(let i=0; i<input.length; i++) {
+                
+                if(input[i].value.length<3 || input[i].value.length>9) {
+                    alert(`In ${input[i].name} length of input must be between 3 and 9 symbols!`)
+                } 
+            }
+        }
+    </script>
+</body>
+</html>

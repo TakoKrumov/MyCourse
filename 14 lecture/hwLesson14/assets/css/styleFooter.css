@@ -1,0 +1,67 @@
+.footer{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    background-color: white;
+}
+
+footer>div{
+    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.products{
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    height: auto;
+    
+}
+.followUs{
+    justify-content: space-between;
+}
+.followUs>a{
+    display: flex;
+    height: 26px;
+    width: 26px;    
+    flex-direction: column;
+    flex:1;
+    
+}
+.products>div{
+    
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.sports>div{
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.collections>div{
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.support>div{
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.companyInfo>div{
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.followUs>a{
+    cursor: pointer;
+    
+    margin:5px;
+}
+
+.footer>div>div:hover{
+    text-decoration: underline;
+}

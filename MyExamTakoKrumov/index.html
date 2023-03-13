@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./asets/style/style.css">
+  <script src="./data.js"></script>
+  <script src="./asets/model/animalManager.js"></script>
+  <script src="./asets/model/donateManager.js"></script>
+  <title>Animal Rescue</title>
+</head>
+<body>
+  <header class="mainHeader">
+    <a href="" id="logo"><img width="50px" height="50px" src="./asets/images/logo.png" alt="logo" class="logo"></a>
+    <div class="homeAndAdopted">
+    <a href="#home">Home</a>
+    <a href="#adopted">Adopted</a>
+  </div>    
+  </header>
+
+  <main>
+    
+    <section class="" id="home">
+      <input type="text" placeholder="Search by name" id="searchByName">
+      <select name="selectType" id="selectByType" >
+        
+      </select>
+      <div class="container">
+
+      </div>
+    </section>
+
+    <section class="" id="adopted">
+      <div class="container"></div>
+    </section>
+
+    <section class="" id="donate">
+      <div class="container">
+        <form id="donationForm">
+          <h1>How much do you want to donate to a animal!</h1>
+          <input type="text" id="donaterName" placeholder="Your name" required>
+          <input type="text" id="donaterSum" placeholder="sum" required>
+          <button type="submit" id="donaterSubmit" placeholder="DONATE" disabled>SUBMIT</button>
+        </form>
+          <h2>Donation History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Animal Name</th>
+                <th>Donated Sum</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./viewController.js"></script>
+</body>
+</html>

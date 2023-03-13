@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css wonderland */
+
+        p {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <p id="firstParagraph" style="background-color: blue;">Hello, world!</p>
+    <p>Hello, world 2!</p>
+    <p id="lastParagraph">Hello, world 3!</p>
+
+
+    <script>
+
+        let photos = [
+            'https://img-9gag-fun.9cache.com/photo/a6q1pj8_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aGEz700_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aVbxvbv_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aGEzppG_460swp.webp'
+        ];
+
+        for (let i = 0; i < photos.length; i++) {
+            let promenliva = document.createElement('img');
+            document.body.appendChild(promenliva);
+            promenliva.src = photos[i];
+            promenliva.className = 'photo';
+            promenliva.style.display = 'inline-block';
+            promenliva.style.width = '25%';
+
+        }
+
+        let images = document.getElementsByTagName('img'); // -> HTMLCollection
+        let imagesByClass = document.getElementsByClassName('photo'); // -> HTMLCollection
+        //                                             <any valid css selector>
+        let imagesViaSelectorApi = document.querySelectorAll('body>img'); // -> NodeList
+        let imagesFromDocument = document.images; // -> HTMLCollection
+
+        console.log(images);
+        console.log(imagesByClass);
+        console.log(imagesViaSelectorApi);
+        console.log(imagesFromDocument);
+
+    </script>
+
+
+</body>
+
+</html>

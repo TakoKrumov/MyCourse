@@ -1,0 +1,138 @@
+* {
+  box-sizing: content-box;
+}
+
+body {
+  width: 100vh;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mainHeader {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  min-height: 10vh;
+  background-color: orange;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.mainHeader #logo {
+    width: 10vw;
+    height: 10vh;
+}
+
+.mainHeader #profile {
+  width: 7vw;
+  height: 7vh;
+}
+
+.mainHeader a:not(:first-of-type) {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  width: 8vw;
+  height: 5vh;
+  padding: 5px 10px 10px;
+  text-align: center;
+  line-height: 1.5em;
+  font-weight: bold;
+  border: 2px black solid;
+  border-radius: 6px;
+}
+
+.container {
+  width: 100vw;
+  
+}
+
+.bttnContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding:20px;
+  background-color: red;
+}
+
+.bttnContainer select{
+  margin-left: 35px;
+}
+
+#recipe .container {
+  background-color: red;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+#favRecipe .container {
+  background-color: orange;
+}
+
+#createRecipe .container {
+  background-color: green;
+}
+
+#myProfile .container {
+  background-color: blue;
+}
+
+#errorPage .container {
+  background-color: red;
+  display:none;
+}
+
+.card {
+  display:flex;
+  flex-direction: column;
+  padding-bottom: 3px;
+  background-color: white;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: black solid 1px;
+}
+.card img{
+  width: 100px;
+  height: 100px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+  width: 100%;
+}
+
+.button {
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mainFooter {
+  width: 100vw;
+  height: 10vh;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2em;
+}

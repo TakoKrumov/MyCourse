@@ -1,0 +1,191 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+    width: 1920;
+    height: 1080;
+}
+
+.header{
+  
+}
+
+.headerShipping{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: black; 
+  height: 40px;
+  width: 100%;
+}
+
+.headerShipping>h1 {
+  color: var(--main-text-color);
+  font:bold 12px Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+}
+
+
+.headerShipping>svg{
+  width: 20px;
+  height: 20px;
+  fill: var(--main-text-color);
+  
+}
+
+.headerHelp{
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.menuHelp{ 
+  margin-right: 40px;
+}
+
+.menuHelp>ul{
+ display: flex;
+}
+
+.menuHelp li{
+  margin-right: 10px;
+}
+
+.menuHelp a{
+  all: unset;
+  font:13px Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.headerMain{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 50px;
+}
+
+.logo{
+
+}
+
+.logo img{
+  scale:1.2;
+}
+
+.hoverMenus{
+  
+}
+
+.hoverMenus ul{
+  display: flex;
+  font:bold 14px Arial, Helvetica, sans-serif;
+  
+}
+
+.hoverMenus li{ 
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 49px;
+  margin-right: 20px;
+  border-bottom: 2px transparent solid;
+  
+}
+
+.hoverMenus>ul>li>a{
+  text-decoration: none; 
+  color:black;
+}
+
+.hoverMenus>li>a:nth-of-type(1) {
+  position: absolute;
+  margin:1px;
+}
+
+.dropdownMen{
+  display: none;
+  position: relative;
+  
+}
+
+.dropdownMen>a{
+  display:flex;
+  text-decoration: none;
+  color: black;
+}
+
+.hoverMenus>ul>li:hover {
+  border-bottom: 2px black solid;
+}
+.hoverMenus>ul>li:hover .dropdownMen { 
+  display:flex;
+  height: 500px; 
+  top:275px;
+  right:20px;
+  z-index: 1;
+  background-color: white;
+  
+  
+}
+.dropdownMen>a {
+  
+  padding-left: 30px;
+}
+.hoverMenus>ul>li:nth-of-type(4){
+  font-weight: normal;
+}
+
+.hoverMenus>ul>li:nth-of-type(5){
+  font-weight: normal;
+}
+
+.actionMenus{
+  
+}
+
+.actionMenusSearch{
+  display:flex;
+  position: relative;
+  height: 32px;
+}
+
+.actionMenus ul{
+  display: flex;
+}
+
+.actionMenus li{
+  margin:0 15px;
+  
+}
+
+.actionMenus>ul>li>img{
+  height:22px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.actionMenusSearch img{
+  position:absolute;
+  right: 0;
+  top: -2px;
+}
+
+.headerBottom {
+  display:flex;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color:var(--main-text-color);
+  font:16px Arial, Helvetica, sans-serif;
+}
+
+.headerBottom a{
+ color: var(--main-text-color);
+}

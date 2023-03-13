@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section {
+            height: 45vh;
+        }
+
+        nav {
+            height: 100px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            margin: 0 20px;
+        }
+
+        #about-us {
+            background-color: blueviolet;
+        }
+
+        #menu {
+            background-color: aquamarine;
+        }
+
+        #home {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#about-us">About us</a>
+            </li>
+            <li>
+                <a href="#menu">Menu</a>
+            </li>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="about-us"></section>
+    <section id="menu"></section>
+    <section id="home"></section>
+
+    <script>
+
+        window.addEventListener('hashchange', function () {
+            handleHashChange();
+        });
+
+        function handleHashChange() {
+            let hash = location.hash.slice(1);
+
+            switch (hash) {
+                case 'about-us':
+                    document.getElementById('menu').style.display = 'none';
+                    document.getElementById('home').style.display = 'none';
+                    document.getElementById('about-us').style.display = 'block';
+                    break;
+                case 'menu':
+                    document.getElementById('about-us').style.display = 'none';
+                    document.getElementById('home').style.display = 'none';
+                    document.getElementById('menu').style.display = 'block';
+                    break;
+                default:
+                    document.getElementById('menu').style.display = 'none';
+                    document.getElementById('about-us').style.display = 'none';
+                    document.getElementById('home').style.display = 'block';
+                    break;
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

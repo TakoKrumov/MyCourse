@@ -1,0 +1,28 @@
+@import url("./header.css");
+@import url("./mainStyles/main.css");
+@import url("./footer.css");
+
+@font-face {
+    font-family: AdihausDIN;
+    src: url("./729-font.ttf");
+}
+
+:root {
+    --main-black-color: #000000;
+    --main-white-color: #FFFFFF;
+    --main-yellow-color: #ede734;
+    --main-grey-color: #d3d7da;
+    --footer-bg-color: #363738;
+    --text-grey-color: #767677;
+    --search-bar-color: #ECEFF1;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: AdihausDIN, Helvetica,  Arial, sans-serif;
+    max-width: 1920px;
+    margin: auto;
+}

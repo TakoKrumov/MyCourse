@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fonts</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.6em;
+    }
+    /* actually we dont need the p because its gonna go inside
+     the ID welcome and look for span element there but this way
+     is more organized and more direct way*/
+    #welcome p span{
+      font-weight: bold;
+    }
+
+    #about p span {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div id="welcome">
+    <h2 class="primary-heading">Welcome</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet inventore,
+      hic velit vel <span> doloribus aperiam a nobis fugit minima facere.</span>
+    </p>
+  </div>
+  <div id="about">
+    <h2>About</h2>
+    <p>
+      Lorem ipsum dolor sit amet <span>consectetur adipisicing elit. Amet inventore,</span>
+      hic velit vel doloribus aperiam a nobis fugit minima facere.
+    </p>
+</body>
+</html>

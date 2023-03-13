@@ -1,0 +1,47 @@
+<!-- 2.	Създайте ХТМЛ страница със селект елемент, който съдържа произволни стойности. 
+Напишете функция, която да се изпълянва при всеки направен избор на 
+селект елемента и да отпечатва на екрана избраната стойност.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>selectMenuPrint</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      strong {
+        font-size:24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <select id="carSelector" name="cars" id="">
+      <option unselectable >pick one...</option>
+      <optgroup class="optGroup" label="Expensive Cars">
+        <option id="sltFerrari" class="car">Ferrari</option>
+        <option id="sltLamborghini" class="car">Lamborghini</option>
+        <option id="sltKoenigsegg" class="car">Koenigsegg</option>
+      </optgroup>
+      <optgroup class="optGroup" label="Not so Expensive cars">
+        <option id="sltBMW" class="car">BMW</option>
+        <option id="sltVolvo" class="car">Volvo</option>
+        <option id="sltAudi" class="car">Audi</option>
+        <option id="sltMercedes" class="car">Mercedes-Benz</option>
+      </optgroup>
+      <optgroup class="optGroup" label="Normal Cars">
+        <option id="sltVW" class="car">VW</option>
+        <option id="sltMazda" class="car">Mazda</option>
+        <option id="sltOpel" class="car">Opel</option>
+      </optgroup>
+    </select>
+    <p id="results"></p>
+    <script src="./index.js"></script>
+  </body>
+</html>

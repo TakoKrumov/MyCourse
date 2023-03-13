@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css wonderland */
+
+        p {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <p id="firstParagraph" style="background-color: blue;">Hello, world!</p>
+    <p>Hello, world 2!</p>
+    <p id="lastParagraph">Hello, world 3!</p>
+
+    <!-- This is an example for a Node (bad practice) -->
+    Bahur, koito ne e opakovan!
+
+    <script>
+
+        let photos = [
+            'https://img-9gag-fun.9cache.com/photo/a6q1pj8_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aGEz700_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aVbxvbv_460swp.webp',
+            'https://img-9gag-fun.9cache.com/photo/aGEzppG_460swp.webp'
+        ];
+
+        for (let i = 0; i < photos.length; i++) {
+            let promenliva = document.createElement('img');
+            document.body.appendChild(promenliva);
+            promenliva.src = photos[i];
+            promenliva.className = 'photo';
+            promenliva.style.display = 'inline-block';
+            promenliva.style.width = '25%';
+
+        }
+
+        let images = document.getElementsByTagName('img'); // -> HTMLCollection - live collection
+        let imagesByClass = document.getElementsByClassName('photo'); // -> HTMLCollection - live collection
+        //                                             <any valid css selector>
+        let imagesViaSelectorApi = document.querySelectorAll('body>img'); // -> NodeList
+        let imagesFromDocument = document.images; // -> HTMLCollection - live collection
+
+        //                creates a shallow copy from the images collection
+        let imagesArray = Array.from(images);
+
+        for (let i = 0; i < imagesArray.length; i++) {
+
+            let span = document.createElement('span');
+            span.innerText = 'Az sum na mqstoto na img-' + i;
+            // images[i] === imagesArray[i]
+            imagesArray[i].parentElement.prepend(span);
+            imagesArray[i].parentElement.removeChild(imagesArray[i]);
+
+        }
+
+        /*
+            first iteration - i = 0;
+            add a new element at the beggining of the PARENT
+
+            remove from images collection - length becomes 3;
+
+            second iteration - i = 1;
+            images = [image0, image1, image2];
+            add a new element at the beggining of the PARENT
+
+            remove from images collection - length becomes 2;
+            images = [image0, image1];
+
+            third iteration - i = 2;
+            2 < images.length (2) -> false
+
+
+        
+        */
+
+    </script>
+
+
+</body>
+
+</html>

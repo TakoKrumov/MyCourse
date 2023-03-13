@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            height: 100vh;
+            cursor: none;
+        }
+
+        #leo, #oscar {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's play!</h1>
+    <img id="leo" width="50" src="https://images.ctfassets.net/tftu3vbfu92u/1txxUcNtdRXgbzGx29YNxB/9a70f3bfadd4e74dff71a2d2de754b5c/Group_794.png" alt="">
+    <img id="oscar" width="50" src="https://upload.wikimedia.org/wikipedia/en/7/7f/Academy_Award_trophy.png" alt="">
+
+    <script>
+        let oscar = document.getElementById('oscar');
+        let title = document.getElementsByTagName('h1')[0];
+        let id;
+        function moveLeo(event) {
+            let leo = document.getElementById('leo');
+
+            leo.style.left = `${event.x - 25}px`;
+            leo.style.top = `${event.y - 25}px`;
+        }
+
+
+        function begai() {
+            
+            id = setTimeout(()=> {
+                oscar.style.left = `calc(${Math.random()*100}vw - 50px)`;
+                oscar.style.top = `calc(${Math.random()*100}vh - 91px)`;
+                title.innerText = "Basi, bavniq si! Ti da ne si Charles Leclear!";
+            },100);
+            
+        }
+
+        function catchOscar() {
+            title.innerText = 'Bravo! Aide eto ti po milost edin oskar!';
+            clearTimeout(id);
+        }
+
+        oscar.addEventListener('mouseenter',begai);
+        oscar.addEventListener('click',catchOscar);
+        document.body.addEventListener('mousemove', moveLeo)
+        
+
+    </script>
+
+</body>
+</html>

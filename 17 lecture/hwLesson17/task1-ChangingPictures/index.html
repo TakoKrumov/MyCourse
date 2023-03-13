@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image by Click</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let img = document.createElement('img');
+        document.body.prepend(img);
+        img.style.maxWidth = '501px';
+        img.style.maxHeight = '709px';
+        img.style.minHeight = '100%';
+        let imgChoice = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+        let i = imgChoice[Math.floor(Math.random()*11)];
+        img.src = `./assets/images/${imgChoice[i]}.jpg`;
+        
+
+        // let random = () => {
+        //     let imgChange = Math.floor(Math.random()*11);
+        //     img.src = `./assets/images/${imgChoice[imgChange]}.jpg`;
+        // }
+
+        img.addEventListener('click',random);
+
+        function  random ()  {
+            let imgChange = Math.floor(Math.random()*11);
+            img.src = `./assets/images/${imgChoice[imgChange]}.jpg`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+.shop-distributor {
+    background-image: url("../../images/distributor-shop-background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 853px;
+    position: relative;
+}
+
+.shop-distributor h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.shop-distributor p {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.shop-distributor-distributor {
+    display: flex;
+    flex-direction: column;
+    color: white;   
+    width: 523px;
+    position: relative;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%, -50%);
+}
+
+.distributor-button {
+    display: inline;
+    border: none;
+    background-color: var(--main-white-color);
+    height: 50px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.distributor-button button {
+    border: none;
+    font-weight: bold;
+    letter-spacing: .1em;
+    background-color: white;
+}
+
+.distributor-button::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 3px;
+    top: 3px;
+    border: 1px solid var(--main-white-color);
+}
+
+.shop-women-button {
+    width: 189px;
+}
+
+.shop-men-button {
+    width: 163px;
+}
+
+.shop-kids-button {
+    width: 167px;
+}
+
+.distributor-button:hover, .distributor-button button:hover, .distributor-button span:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}

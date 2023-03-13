@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: block;
+
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          45deg,
+          #fa8bff 0%,
+          #2bd2ff 52%,
+          #2bff88 90%
+        );
+
+        background-repeat: no-repeat;
+        margin: auto;
+      }
+
+      .container {
+        display: block;
+        margin: 100px auto;
+        max-width: 400px;
+        min-width: 20%;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .formWrap {
+        padding: 15px 20px;
+      }
+      .container h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+      }
+      .formGroup label {
+        padding-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .formGroup {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+      }
+
+      .formGroup > input {
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid black;
+        width: 100%;
+        padding: 10px;
+      }
+      .submit {
+        margin: 50px;
+        align-self: center;
+        width: 60%;
+        height: 50px;
+        border-radius: 10px;
+        border: 0px transparent;
+        background: linear-gradient(
+          90deg,
+          #fa8bff 0%,
+          #2bd2ff 52%,
+          #2bff88 90%
+        );
+        font-size: medium;
+        font-weight: bold;
+        cursor:pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="formWrap">
+        <h1>Test Form</h1>
+        <div class="formGroup">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            name="fullNameOfUser"
+            placeholder="Enter Your Full Name"
+          />
+        </div>
+        <div class="formGroup">
+          <label for="email">Email</label>
+          <input type="email" name="userEmail" placeholder="Enter Your Email" />
+        </div>
+        <div class="formGroup">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="number"
+            name="userPhoneNumber"
+            placeholder="Enter Your Phone Number"
+          />
+        </div>
+        <div class="formGroup">
+          <label for="userAge">Age</label>
+          <ul>
+            <li><input type="radio" name="status" id="" />&gt;18</li>
+            <li><input type="radio" name="status" id="" />19-35</li>
+            <li><input type="radio" name="status" id="" />35+</li>
+          </ul>
+          <div class="formGroup">
+            <label for="userEducation" class="userEducation">Education</label>
+            <ul>
+              <li><input type="checkbox" name="status" id="" />High School</li>
+              <li><input type="checkbox" name="status" id="" />Some College</li>
+              <li>
+                <input type="checkbox" name="status" id="" />Associate's Degree
+              </li>
+              <li>
+                <input type="checkbox" name="status" id="" />Bachelor's Degree
+              </li>
+            </ul>
+          </div>
+
+          <div class="formGroup">
+            <label for="appointmentDate">Appointment Date</label>
+            <input
+              type="date"
+              name="userAppointment"
+              placeholder="mm/dd/yyyy"
+            />
+          </div>
+          <div class="formGroup">
+            <label for="messageToTheForm">Message</label>
+            <input
+              type="message"
+              name="userMessage"
+              placeholder="Enter a Message"
+            />
+          </div>
+
+          <div class="formGroup">
+            <button class="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

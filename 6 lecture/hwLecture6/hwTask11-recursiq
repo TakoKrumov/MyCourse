@@ -1,0 +1,30 @@
+let field = [];
+function bomb( x,y,arr) {
+    let counter = 0;
+
+    if(
+         x<0 ||
+         x>=arr.length ||
+        y < 0 ||
+        y>=arr[x].length ||
+        arr[x][y] === counter-1 ||
+        arr[x][y] > counter
+             
+    ) {
+       return;
+    } 
+
+    
+        arr[x][y] = ++counter;
+        bomb( x+1,y,arr) // down
+        bomb( x-1,y+1,arr) 
+ // up
+
+    // bomb( x,y+1,arr); // right
+    // bomb( x,y-1,arr);// left
+    return console.table(arr);; 
+}
+
+bomb(0,0, field);
+
+console.table(field);

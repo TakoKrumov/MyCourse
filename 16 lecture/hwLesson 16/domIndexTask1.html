@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <title>Test Form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+        
+    <script>
+        
+        
+        let body = document.body ;
+        body.style.display = 'block';
+        body.style.background = 'linear-gradient(45deg,#fa8bff 0%,#2bd2ff 52%,#2bff88 90%';
+        body.style.backgroundRepeat = 'no-repeat';
+        body.style.margin = 'auto';
+
+        let container = document.createElement('div');
+        document.body.appendChild(container);
+        container.className = 'container';
+        container.style.display = 'block';
+        container.style.margin = '100px auto';
+        container.style.maxWidth = '400px';
+        container.style.minWidth = '20%';   
+        container.style.background = 'whitesmoke';
+        container.style.padding = '20px';
+        container.style.borderRadius = '20px';
+        
+        let formWrap = document.createElement('div');        
+        container.appendChild(formWrap);
+        formWrap.className = 'formWrap';
+        formWrap.style.padding = '15px 20px';
+
+        let headingOne = document.createElement('h1');
+        headingOne.textContent = 'Test Form';
+        formWrap.appendChild(headingOne);
+        headingOne.style.textAlign = 'center';
+        headingOne.style.fontWeight = 'bold';
+        headingOne.style.fontSize = 'large';
+
+        function creator (parent,value){
+            let element = document.createElement(value);
+            parent.appendChild(element);
+        }
+        
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'input');
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'input');
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'input');
+
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'ul');
+
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'ul');
+
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'input');
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'label');
+        creator(formWrap.lastChild,'input');
+
+        creator(formWrap,'div');
+        creator(formWrap.lastChild,'button');
+
+        let changesDiv = formWrap.getElementsByTagName('div');
+        for(let i=0; i<changesDiv.length; i++) {
+            changesDiv[i].style.display = 'flex';
+            changesDiv[i].style.flexDirection = 'column';
+            changesDiv[i].style.paddingTop = '10px';
+        }
+
+        let labelTxt = [
+            'Full Name','Email','Phone type','Age',
+            'Education','Appointment Date','Message'
+            ];
+
+        let changesLabel = formWrap.getElementsByTagName('label');
+        for(let i=0; i<changesLabel.length; i++) {
+            changesLabel[i].textContent = labelTxt[i];
+            changesLabel[i].style.paddingBottom = '10px';
+            changesLabel[i].style.fontWeight = 'bold';        
+        }
+        let inputType = [
+            'text','email','text','date','message'
+            ];
+
+        let inputPlaceHolder = [
+            'Enter Your Full Name','Enter Your Email',
+            'Enter Your Phone type','mm/dd/yyyy',
+            'Enter a Message'
+            ];
+
+        let changesInput = formWrap.getElementsByTagName('input');
+        for(let i=0; i<changesInput.length; i++) {
+            changesInput[i].type = inputType[i];
+            changesInput[i].placeholder = inputPlaceHolder[i];
+            changesInput[i].style.border = 'none';
+            changesInput[i].style.borderBottom = '1px solid black';
+            changesInput[i].style.backgroundColor = 'transparent';
+            changesInput[i].style.width = '100%';
+            changesInput[i].style.padding = '10px';
+        }
+        
+        let findUl = formWrap.getElementsByTagName('ul');
+
+        let inputTypes = ['radio','checkbox'];
+        let liTxtAge = ['&gt;18','19-35','35+'];
+        let liTxtEducation = [
+            'High School','Some College',
+            'Associate\'s Degree','Bachelor\'s Degree'
+            ];
+
+        function changeUl (value,type,textValue) {
+            value.innerHTML += `<li>
+                <input type="${type}" name="status">
+                ${textValue}</li>`;            
+        }
+
+        for (let i=0; i<inputTypes.length; i++) {
+
+            if (i<1) {
+                for(let j=0; j<liTxtAge.length; j++) {
+                    changeUl(findUl[i],inputTypes[i],liTxtAge[j]);
+                }
+            
+            }else{
+                for(let j=0; j<liTxtEducation.length; j++) {
+                    changeUl(findUl[i],inputTypes[i],liTxtEducation[j])
+                } 
+            }
+        }
+
+        let findButton = formWrap.getElementsByTagName('button');
+
+        findButton[0].style.margin = '50px';
+        findButton[0].style.alignSelf = 'center';
+        findButton[0].style.width = '60%';
+        findButton[0].style.height = '50px';
+        findButton[0].style.borderRadius = '10px';
+        findButton[0].style.border = '0px transparent';
+        findButton[0].style.background = 'linear-gradient(90deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%';
+        findButton[0].style.fontSize = 'medium';
+        findButton[0].style.fontWeight = 'bold';
+        findButton[0].style.cursor = 'pointer';
+        findButton[0].textContent = 'Submit';
+    </script>
+</body>
+</html>

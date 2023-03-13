@@ -1,0 +1,5 @@
+vehicle-> accelerate -> this.type from different vihicle
+a - this.type
+b - yearOfProduction
+c - topSpeed
+d - typeOfFuel

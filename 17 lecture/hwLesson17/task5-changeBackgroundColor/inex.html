@@ -1,0 +1,51 @@
+<!-- 5.	Създайте страница, която съдържа форма с 3 инпут-а и един бутон от тип събмит. 
+    Всеки от инпутите, трябва да отговаря за цветовете – red, green and blue.
+     Когато събмит бутона е натиснат, добавете цвета като background на body елемента.
+a.	Добавете следната валидация на инпутите
+i.	Стойността не може да бъде по-малка от 0
+ii.	Стойността не може да бъде по-голяма от 255
+b.	Ако потребителя опита да въведе невалидна стойност – направете стойността на инпут компонента = 0.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 1980px;
+        width: 1080px;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <input
+      type="text"
+      name="RED"
+      id="red"
+      placeholder="red"
+      maxlength="3"
+      
+    />
+    <input
+      type="text"
+      name="GREEN"
+      id="green"
+      placeholder="green"
+      maxlength="3"
+    />
+    <input
+      type="text"
+      name="BLUE"
+      id="blue"
+      placeholder="blue"
+      maxlength="3"
+    />
+    <button type="submit" id="combineColors">COMBINE!</button>
+    <script src="./index.js"></script>
+  </body>
+</html>

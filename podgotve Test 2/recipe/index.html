@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./recipe.js"></script>
+  <script src="./assets/model/recipeManager.js"></script>
+  <title>Recipe</title>
+</head>
+<body>
+  <header>
+    <img width="75" src="./assets/images/logo.png" alt="logo recipe page">
+    <nav>
+      <a href="#allRecipes">Всички Рецепти</a>
+      <a href="#favoriteRecipe">Любими</a>
+      <a href="#createRecipe">Създай Рецепта</a>
+      <a href="#profile">Моят Профил</a>
+    </nav>
+    <img width="75" src="./assets/images/guest.png" alt="profilePic" class="profilePicture">
+  </header>
+
+  <main>
+    <section id="allRecipes" class="section">
+      <form class="filterRecipes">
+        <input type="text" placeholder="Search By Recipe Name"/>
+        <select name="ingredients" id="ingredients">
+          
+        </select>
+      </form>
+
+      <div class="recipeContainer">
+
+      </div>
+    </section>
+
+    <section id="favoriteRecipe" class="section">
+      <div class="favoriteRecipeContainer">
+
+      </div>
+    </section>
+
+    <section id="createRecipe" class="section">
+      <form class="createRecipe">
+        <input type="text" name="title" placeholder="Title for recipe" id="titleForNewRecipe">
+        <input type="text" name="ingredients" placeholder="ingredients" id="ingredientsForNewRecipe">
+        <input type="text" name="href" placeholder="URL link" id="linkForNewRecipe">
+        <input type="file" name="thumbnail" accept="image/*" placeholder="URL Image" id="thumbnailForNewRecipe">
+        <input type="submit" >
+      </form>
+    </section>
+
+    <section id="profile" class="section">
+      <form class="editProfile">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="profileName">
+        <label for="age">Age:</label>
+        <input type="number" name="age" class="profileAge">
+        <label for="address">Address:</label>
+        <input type="text" name="address" class="profileAddress">
+        <label for="imageURL">Profile Pic URL:</label>
+        <input type="file" accept="image/*" name="imgURL" class="profilePicture">
+        <input type="submit" value="Edit Profile" >
+      </form>
+
+      <h2>Cooked Meals:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Meal</th>
+            <th>Cooked Count</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </section>
+    <section id="error" class="section">Няма такава страница!</section>
+  </main>
+
+  <footer>
+    <h2>Website created by: Tako Krumov</h2>
+    <p>All rights reserved &copy; 2023</p>
+  </footer>
+  
+  <script src="./viewControler.js"></script>
+</body>
+</html>

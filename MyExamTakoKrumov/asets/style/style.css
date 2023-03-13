@@ -1,0 +1,174 @@
+@import url(./reset.css);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.mainHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: orange;
+}
+
+.homeAndAdopted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40%;
+}
+
+.homeAndAdopted a {
+  text-decoration: none;
+  padding: 0 25px;
+  margin: 0 10px;
+  color: black;
+  visibility: visible;
+}
+
+#home {
+  width: 100%;
+  min-height: 100vh;
+  background-color: red;
+  
+}
+
+#home input,select{
+  
+  margin: 10px;
+}
+
+#home .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin:15px
+}
+
+#adopted {
+  width: 100%;
+  min-height: 100vh;
+  background-color: green;
+}
+
+#adopted .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding:15px;
+}
+
+#donate .container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+
+h2 {
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0 auto;
+}
+
+#donate input {
+  margin: 20px;
+}
+
+table {
+  width: 60%;
+  margin: 25px auto ;
+  border: 3px solid black;
+
+}
+
+table td, table th {
+  border:3px solid black;
+  text-align: center;
+}
+
+.cardContainer {
+  display:grid;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 4fr repeat(5, 1fr) 2fr;
+  width: 285px;
+  height: 450px;
+  gap: 20px;
+  background-color: blanchedalmond;
+  grid-template-areas: 
+  "image image"
+  "name name"
+  "family family"
+  "age age"
+  "breed breed"
+  "neededSum neededSum"
+  "adopt donate";
+}
+
+.animalImage {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 285px;
+  height: 215px;
+  padding: 15px 25px;
+}
+
+.animalName {
+  grid-area: name;
+  padding-left: 5px;
+}
+
+.animalFamily {
+  grid-area: family;
+  padding-left: 5px;
+}
+
+.animalAge {
+  grid-area: age;
+  padding-left: 5px;
+}
+
+.animalBread {
+  grid-area: breed;
+  padding-left: 5px;
+}
+
+.neededSum {
+  grid-area: neededSum;
+  padding-left: 5px;
+}
+
+.adoptBtn {
+  grid-area: adopt;
+  width: 60px;
+  margin: 0 15px 5px 50px;
+}
+
+.donateBtn {
+  grid-area: donate;
+  width: 60px;
+  margin: 0 50px 5px 15px;
+}

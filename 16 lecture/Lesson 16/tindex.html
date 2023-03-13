@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css wonderland */
+
+        p {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <p id="firstParagraph" style="background-color: blue;">Hello, world!</p>
+    <p>Hello, world 2!</p>
+    <p id="lastParagraph">Hello, world 3!</p>
+
+
+    <script>
+        // creating an element is not enough to see it on the screen
+        let newElement = document.createElement('h1');
+        newElement.id = 'newId';
+
+        newElement.className = 'novClass';
+        // newElement.className = 'oshteEdinClass'; -> overwrites completly the old value of the className
+
+        newElement.className+= ' oshteEdinClass' // the proper way to add additional class
+
+        newElement.classList.add('tretiClass');
+        newElement.classList.remove('novClass');
+        newElement.classList.toggle('novClass'); // adds or removes class
+        newElement.classList.toggle('novClass'); // same here
+        newElement.classList.toggle('novClass'); // same here
+
+        newElement.innerText = "Basi qkoto!";
+        let lastP = document.getElementById('lastParagraph');
+        document.body.insertBefore(newElement, lastP);
+
+        console.log(document.getElementsByTagName('p'));
+       
+    </script>
+
+
+</body>
+
+</html>

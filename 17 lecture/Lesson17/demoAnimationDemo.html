@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="purple"></div>
+    <script>
+        let left = 0;
+        let id;
+        let moveSqare = () => {
+            let elem = document.getElementById('title');
+            elem.innerText = left;
+            left++;
+            id = requestAnimationFrame(moveSqare);
+        }
+        //  DONT DO THAT - the delay time is not guaranteed
+        // let timerId = setInterval(moveSqare, 10);
+
+        id = requestAnimationFrame(moveSqare);
+
+
+        setTimeout(()=> {
+            cancelAnimationFrame(id);
+        }, 1000)
+        
+
+    </script>
+
+</body>
+</html>
