@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find IP</title>
+
+  <style>
+    *{
+      box-sizing: content-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-image: radial-gradient(
+    circle,
+    #a37e93,
+    #9d7d99,
+    #957d9e,
+    #8b7ea3,
+    #7f7fa7,
+    #7281a8,
+    #6683a8,
+    #5a85a5,
+    #53879e,
+    #528896,
+    #55888d,
+    #5c8784
+  );
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      width: 250px;
+      height: 250px;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  </style>
+
+</head>
+<body>
+    
+    <div class="container">
+      <label for="ipForSeearch">Type Ip Address</label>
+      <input type="text" id="ipForSearch" placeholder="type Ip address">
+      <input type="submit" id="submitIpToApi">
+    </div>
+
+    <main class="container" id="mainBody">
+      
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
