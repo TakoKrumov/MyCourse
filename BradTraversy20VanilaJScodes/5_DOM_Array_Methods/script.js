@@ -51,9 +51,7 @@ function showMillionaires() {
 
 // reduce method calculate wealth
 function calculateWealth () {
-  const wealth = data.reduce((acc, user) => {
-    return (acc += user.money)
-  },0);
+  const wealth = data.reduce((acc, user) => (acc += user.money),0);
 
   const wealthElement = document.createElement('div');
   wealthElement.innerHTML = 
