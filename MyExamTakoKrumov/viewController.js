@@ -87,11 +87,8 @@ class ViewController {
       .querySelector("#donationForm h1")
       .textContent.slice(34)
       .trim();
-      animalName === "a animal!"
-      ? donateSubmitBtn.disabled = true
-      : donateSubmitBtn.disabled = false;
 
-    if (donatingUser && donatingSum) {
+    if (donatingUser && donatingSum && animalName !== "a animal!") {
       donateSubmitBtn.disabled = false;
     } else {
       donateSubmitBtn.disabled = true;
