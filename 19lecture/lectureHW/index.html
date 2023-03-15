@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+
+        body {
+            font-size: 20px;
+        }
+
+        .page {
+            min-height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login {
+            background-color: lightskyblue;
+        }
+
+        #register {
+            background-color: khaki;
+        }
+        #home {
+            background-color: coral;
+        }
+
+        footer {
+            height: 150px;
+            background-color: green;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            background-color: black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        small {
+            margin-top: 1px;
+            margin-bottom: 8px;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+         
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a id="loginLink" href="#login">Login</a>
+        <a id="regLink" href="#register">Register</a>
+        <a href="#home">Home</a>
+    </nav>
+    <div class="page" id="login">
+
+        <form id="loginForm">
+            <input name="username" id="username" type="text" placeholder="username">
+            <small id="usernameMessage" >Enter your username</small>
+            <input name="pass" id="password" type="password" placeholder="pass">
+            <small id="passwordMessage">Enter your password</small>
+            <input id="submitLogin" type="submit" value="Login" disabled> <!--disabled -->
+        </form>
+
+    </div>
+    <div class="page" id="register">
+
+        <form id="registerForm"> 
+            <input name="newUserName" id="newUserName" type="text" placeholder="username">
+            <small id="registerNameMessage">Enter your username</small>
+            <input name="newUserPassword" id="newUserPassword" type="password" placeholder="pass">
+            <small id="registerPasswordMessage">Enter your password</small>
+            <input name="newUserPasswordConf" id="newUserPasswordConf" type="password" placeholder="confirm pass">
+            <small id="registerPasswordMessageConf">Confirm your password</small>
+            <input id="submitRegister" type="submit" value="Register" disabled>
+        </form>
+    </div>
+    <div class="page" id="home"></div>
+    <footer>Footer!</footer>
+    <script src="./UserManager.js"></script>
+    <script src="./ViewController.js"></script>
+</body>
+</html>
