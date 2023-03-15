@@ -1,25 +1,33 @@
 class ViewController {
 
   constructor () {
-    window.addEventListener('load', this.handleHashChange);
-    window.addEventListener('hashchange', this.handleHashChange);
     this.usersManager = new UsersManager ();
     this.loanManager = new LoanShark();
+    window.addEventListener('load', this.handleHashChange);
+    window.addEventListener('hashchange', this.handleHashChange);
+    window.addEventListener('load', this.usersManager.checkIfSomeoneIsLogged)
+
   }
 
   handleHashChange = () => {
-    const pageIds = ['home', 'login', 'register','loan'];
+    const pageIds = ['home','loan'];
+    let otherPages = ['login', 'register']
 
     let hash = location.hash.slice(1) || pageIds[0];
 
-    // if(hash === 'home') {
-    //     if(!userManager.loggedUser || !userManager.loggedUser.pass) {
-    //         location.hash = 'login';
-    //         return; 
-    //     }
-    // }
+    if(hash === 'loan') {
+        if(!this.usersManager.checkIfSomeoneIsLogged()) {
+            location.hash = 'login';
+            return; 
+        } else {
+          otherPages = [];
+          return; 
+        }
+    }
 
-    pageIds.forEach(pageId => {
+
+
+    [...pageIds,...otherPages].forEach(pageId => {
         let page = document.getElementById(pageId);
 
         if(pageId === hash) {

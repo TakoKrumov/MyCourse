@@ -17,11 +17,20 @@ class UsersManager {
     this.loggedUser = null;
     this.loanHistory = [];
     this.dataBaseLoanSharks = [];
-
   }
 
   dataBaseUsers = [new User("Admin","Admin","LoanSharkAdmin@loanShark.bite",null)];
-  
+
+  checkIfSomeoneIsLogged = () => {
+    let isThereSomeoneLogged = fromLocalStorage("loggedUser");
+    if(isThereSomeoneLogged) {
+      this.loggedUser = isThereSomeoneLogged;
+      console.log(isThereSomeoneLogged)
+      
+    }
+    
+  }
+
   login = ({username, password}, myDataBase) => {
     let existingUser = fromLocalStorage(myDataBase).find( account => {
       account.username === username && account.password === password
