@@ -1,0 +1,76 @@
+@import url(./reset.css);
+
+:root {
+  --main-width: 100vw; 
+}
+
+* {
+  box-sizing: content-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  width: var(--main-width);
+  height: 100vh;
+}
+
+.mainNavigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: var(--main-width);
+  height: 8vh;
+}
+
+.navLinks {
+  text-decoration: none;
+  color:black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  width: 112px;
+  height: 52px;
+  border-radius: 20%;
+  border: black solid 2px;
+}
+
+.navLinks:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--main-width);
+  height: 84vh;
+}
+
+#home {
+  background-color: orange;
+}
+
+#login {
+  background-color: red;
+}
+
+#register {
+  background-color: green;
+}
+
+#loan {
+  background-color: blueviolet;
+}
+
+.mainFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: var(--main-width);
+  height: 8vh;
+}
