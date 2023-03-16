@@ -25,6 +25,6 @@ class LoanManager {
       this.interestRate = 0.06;
     }
 
-
+    
   }
 }
