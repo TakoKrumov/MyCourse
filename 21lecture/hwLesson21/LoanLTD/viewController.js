@@ -2,7 +2,7 @@ class ViewController {
   constructor() {
     this.usersManager = new UsersManager();
     this.loanManager = new LoanManager();
-    
+
     window.addEventListener("load", this.usersManager.checkIfSomeoneIsLogged);
     window.addEventListener("load", this.handleHashChange);
     window.addEventListener("hashchange", this.handleHashChange);
@@ -13,10 +13,8 @@ class ViewController {
         toLocalStorage("MyDataBase", this.usersManager.dataBaseUsers);
       }
     });
-
-    
   }
-  
+
   handleHashChange = () => {
     this.renderLogout();
     let pageIds = ["home"];
@@ -30,11 +28,11 @@ class ViewController {
       assistHandleHashChange(pageIds, navLinks, hash);
       switch (hash) {
         case "home":
+          this.renderHome();
           break;
         case "loan":
           this.renderLoan();
           break;
-
       }
     }
 
@@ -46,6 +44,7 @@ class ViewController {
       assistHandleHashChange(pageIds, navLinks, hash);
       switch (hash) {
         case "home":
+          this.renderHome();
           break;
         case "login":
           this.renderLogin();
@@ -60,7 +59,7 @@ class ViewController {
   renderLoan = () => {
     let debtor = document.getElementById("inputFromLogin");
     debtor.value = fromLocalStorage("loggedUser").username;
-  }
+  };
 
   renderLogout = () => {
     const logoutBtn = document.getElementById("logoutLink");
@@ -128,9 +127,14 @@ class ViewController {
       let username = event.target.elements.registerID.value;
       let email = event.target.elements.registerEmail.value;
       let password = event.target.elements.registerPassword.value;
-   
+
       if (this.registerCheck(event)) {
-        if (this.usersManager.register({ username, password, email }, "MyDataBase")) {
+        if (
+          this.usersManager.register(
+            { username, password, email },
+            "MyDataBase"
+          )
+        ) {
           location.hash = "login";
           registerForm.reset();
           return;
@@ -145,6 +149,16 @@ class ViewController {
         });
       }
     });
+  };
+
+  renderHome = () => {
+    let home = document.getElementById("homeMain");
+
+    if (this.usersManager.checkIfSomeoneIsLogged()) {
+      homeMain.innerHTML = "";
+    } else {
+      homeMain.innerHTML = `<div>Welcome to our Loan Shark Side If you wanna get some easy money Login if you dont have account?What are you waiting for got ot <a href="#register">Register</a>!</div>`;
+    }
   };
 }
 

@@ -24,9 +24,8 @@
     </nav>
 
     <main class="container" id="container">
-
       <section class="page" id="home">
-
+        <main class="homeMain" id="homeMain"></main>
       </section>
 
       <section class="page" id="login">
@@ -39,7 +38,7 @@
             placeholder="Your Username"
             required
           />
-          <small class="errorMsgLogin" >Wrong credential!</small>
+          <small class="errorMsgLogin">Wrong credential!</small>
           <label for="" class="label">Password:</label>
           <input
             type="password"
@@ -48,10 +47,11 @@
             placeholder="Your password"
             required
           />
-          <small class="errorMsgLogin" >Wrong credential!</small>
+          <small class="errorMsgLogin">Wrong credential!</small>
           <input type="submit" id="loginBtn" class="submit" value="Login" />
-          <small class="errorMsgLogin specialMSG" >
-            Either your Login username is bad or your email or your account do not exist.If you do not have account please go to 
+          <small class="errorMsgLogin specialMSG">
+            Either your Login username is bad or your email or your account do
+            not exist.If you do not have account please go to
             <a href="#register">Register</a>!
           </small>
         </form>
@@ -107,14 +107,30 @@
       <section class="page" id="loan">
         <form class="form" id="loanForm">
           <label class="label">Debtor: </label>
-          <input type="text" class="formFields" id="inputFromLogin" disabled>
+          <input type="text" class="formFields" id="inputFromLogin" disabled />
           <label class="label">Yearly Income: </label>
-          <input type="number" class="formFields" placeholder="Input your income for last year!">
+          <input
+            type="number"
+            class="formFields"
+            placeholder="Input your income for last year!"
+          />
           <label class="label">Request loan:</label>
-          <input type="number" class="formFields" placeholder="Input how much you wanna take from the sharks"> 
+          <input
+            type="number"
+            class="formFields"
+            placeholder="Input how much you wanna take from the sharks"
+          />
           <label class="label">Request time for returning:</label>
-          <small>(time you will have to return the money - minimum 6 months)</small>
-          <input type="number" min = "6" class="formFields">
+          <small class="specialMSG"
+            >(time you will have to return the money - minimum 6 months)</small
+          >
+          <input type="number" min="6" class="formFields" />
+          <input
+            type="submit"
+            value="Ask for eazy money!"
+            class="submit"
+            id="submitStupidity"
+          />
         </form>
       </section>
     </main>

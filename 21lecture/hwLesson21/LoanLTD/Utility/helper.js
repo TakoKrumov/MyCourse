@@ -12,7 +12,6 @@ function removeFromLocalStorage(stringKey) {
 }
 
 function assistHandleHashChange(pageIds, navLinks, hash) {
-  
   pageIds.forEach((pageId) => {
     let page = document.getElementById(pageId);
 
@@ -28,12 +27,9 @@ function assistHandleHashChange(pageIds, navLinks, hash) {
   });
 }
 
-function doNotShow (notToShowIDs) {
-
+function doNotShow(notToShowIDs) {
   notToShowIDs.forEach((notToShow) => {
     let page = document.getElementById(notToShow);
     page.style.display = "none";
-  })
-
+  });
 }
-
