@@ -12,18 +12,22 @@
   </head>
   <body>
     <nav class="mainNavigation" id="mainNavigation">
-      <a href="#home" class="navLinks"
+      <a href="#home" class="navLinks" id="homeLink"
         ><img
           src="./Assets/images/home_FILL0_wght400_GRAD0_opsz48.svg"
           alt="homeSvg"
       /></a>
-      <a href="#login" class="navLinks">Login</a>
-      <a href="#register" class="navLinks">Register</a>
-      <a href="#loan" class="navLinks">Make a Loan Request</a>
+      <a href="#login" class="navLinks" id="loginLink">Login</a>
+      <a href="#register" class="navLinks" id="registerLink">Register</a>
+      <a href="#loan" class="navLinks" id="loanLink">Make a Loan Request</a>
+      <a href="#logout" class="navLinks" id="logoutLink">Logout</a>
     </nav>
 
     <main class="container" id="container">
-      <section class="page" id="home"></section>
+
+      <section class="page" id="home">
+
+      </section>
 
       <section class="page" id="login">
         <form class="form" id="loginForm">
@@ -35,7 +39,7 @@
             placeholder="Your Username"
             required
           />
-          <small class="smallMessage" id="smallMessageLogUser">Message</small>
+          <small class="errorMsgLogin" >Wrong credential!</small>
           <label for="" class="label">Password:</label>
           <input
             type="password"
@@ -44,14 +48,18 @@
             placeholder="Your password"
             required
           />
-          <small class="smallMessage" id="smallMessageLogPass">Message</small>
+          <small class="errorMsgLogin" >Wrong credential!</small>
           <input type="submit" id="loginBtn" class="submit" value="Login" />
+          <small class="errorMsgLogin specialMSG" >
+            Either your Login username is bad or your email or your account do not exist.If you do not have account please go to 
+            <a href="#register">Register</a>!
+          </small>
         </form>
       </section>
 
       <section class="page" id="register">
         <form class="form" id="registerForm">
-          <label for="" class="label">Login:</label>
+          <label for="" class="label">Register:</label>
           <input
             type="text"
             id="registerID"
@@ -59,7 +67,7 @@
             placeholder="Your Username"
             required
           />
-          <small class="smallMessage" id="smallMessageRegUser">Message</small>
+          <small class="errorMsgReg" id="errorMsgUsername">Wrong Input</small>
           <label for="" class="label">Email:</label>
           <input
             type="text"
@@ -68,7 +76,7 @@
             placeholder="Your Email"
             required
           />
-          <small class="smallMessage" id="smallMessageRegEmail">Message</small>
+          <small class="errorMsgReg" id="errorMsgEmail">Wrong Input</small>
           <label for="" class="label">Password:</label>
           <input
             type="password"
@@ -77,7 +85,7 @@
             placeholder="Your password"
             required
           />
-          <small class="smallMessage" id="smallMessageRegPass">Message</small>
+          <small class="errorMsgReg" id="errorMsgPsw">Wrong Input</small>
           <label for="" class="label">Confirm Password:</label>
           <input
             type="password"
@@ -86,7 +94,7 @@
             placeholder="Confirm Your password"
             required
           />
-          <small class="smallMessage" id="smallMessageRegPassConf">Message</small>
+          <small class="errorMsgReg" id="errorMsgConfirmPsw">Wrong Input</small>
           <input
             type="submit"
             id="registerBtn"
@@ -97,14 +105,24 @@
       </section>
 
       <section class="page" id="loan">
-        <form class="form" id="loanForm"></form>
+        <form class="form" id="loanForm">
+          <label class="label">Debtor: </label>
+          <input type="text" class="formFields" id="inputFromLogin" disabled>
+          <label class="label">Yearly Income: </label>
+          <input type="number" class="formFields" placeholder="Input your income for last year!">
+          <label class="label">Request loan:</label>
+          <input type="number" class="formFields" placeholder="Input how much you wanna take from the sharks"> 
+          <label class="label">Request time for returning:</label>
+          <small>(time you will have to return the money - minimum 6 months)</small>
+          <input type="number" min = "6" class="formFields">
+        </form>
       </section>
     </main>
 
     <footer class="mainFooter" id="mainFooter">
       Loan LTD by Tako Krumov 2023 &copy;
     </footer>
-
+    <script src="./Utility/formValidation.js"></script>
     <script src="./viewController.js"></script>
   </body>
 </html>

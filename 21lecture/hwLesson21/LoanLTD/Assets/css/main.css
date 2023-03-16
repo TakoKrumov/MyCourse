@@ -37,11 +37,10 @@ body {
 
 .navLinks:hover {
   cursor: pointer;
-  background-color: red;
+  background-color:  red;
 }
 
 .page {
-  display: flex;
   justify-content: center;
   align-items: center;
   width: var(--main-width);
@@ -53,7 +52,7 @@ body {
 }
 
 #login {
-  background-color: red;
+  background-color: lightgrey;
 }
 
 #register {

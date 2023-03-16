@@ -30,6 +30,32 @@
   border-radius: 15px;
 }
 
-.smallMessage {
+.errorMsgLogin,
+.errorMsgReg {
+  visibility: hidden;
+}
+
+.errorMsgLogin.true,.errorMsgReg.true{
   font-size: 16px;
+  color:red;
+  font-style: italic;
+  visibility: visible;
+  font-weight: 650;
+}
+
+
+.specialMSG {
+  margin-top: 10px;
+  width: 270px;
+  text-decoration: none;
+}
+
+.specialMSG a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
 }
