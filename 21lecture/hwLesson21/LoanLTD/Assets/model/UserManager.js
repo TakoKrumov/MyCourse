@@ -3,9 +3,10 @@ class User {
     this.username = username;
     this.password = password;
     this.email = email;
-    this.yearIncome = null;
+    this.monthlyIncome = null;
     this.isUserLogged = false;
     this.userLoans = [];
+    this.userRequestForLoan = null;
   }
 }
 

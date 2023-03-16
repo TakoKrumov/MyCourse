@@ -49,6 +49,10 @@ body {
 
 #home {
   background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 #login {
@@ -69,4 +73,10 @@ body {
   align-items: center;
   width: var(--main-width);
   height: 8vh;
+}
+
+#welcomeMsg {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
 }

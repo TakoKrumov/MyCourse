@@ -1,0 +1,22 @@
+table {
+  width: 600px;
+  padding: 15px;
+
+}
+
+table tr {
+  height: 35px;
+}
+
+table th {
+  font-weight: bold;
+  
+}
+
+ table th,
+ table td {
+  border:1px solid black;
+  text-align: center;
+  padding: 12px;
+}
+

@@ -33,3 +33,9 @@ function doNotShow(notToShowIDs) {
     page.style.display = "none";
   });
 }
+
+function promiceMaker () {
+  let promise = new Promise ((resolve, reject) => {
+    
+  })
+}

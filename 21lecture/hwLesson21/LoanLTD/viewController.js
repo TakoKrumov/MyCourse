@@ -59,6 +59,15 @@ class ViewController {
   renderLoan = () => {
     let debtor = document.getElementById("inputFromLogin");
     debtor.value = fromLocalStorage("loggedUser").username;
+
+    const eazyMoney = document.getElementById("loanForm");
+
+    eazyMoney.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+
+    })
+
   };
 
   renderLogout = () => {
@@ -152,12 +161,15 @@ class ViewController {
   };
 
   renderHome = () => {
-    let home = document.getElementById("homeMain");
+    let guest = document.getElementById("welcomeMsg");
+    let logged = document.getElementById("homeForLoggedUsers");
 
     if (this.usersManager.checkIfSomeoneIsLogged()) {
-      homeMain.innerHTML = "";
+      guest.style.display = "none";
+      logged.style.display = "flex";
     } else {
-      homeMain.innerHTML = `<div>Welcome to our Loan Shark Side If you wanna get some easy money Login if you dont have account?What are you waiting for got ot <a href="#register">Register</a>!</div>`;
+      guest.style.display = "inline-block";
+      logged.style.display = "none";
     }
   };
 }
