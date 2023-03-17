@@ -1,13 +1,16 @@
 class User {
-  constructor(username, password, email, yearIncome) {
+  constructor(username, password, email) {
     this.username = username;
     this.password = password;
     this.email = email;
+    this.moneyInBank = this.startingMoney();
     this.monthlyIncome = null;
-    this.isUserLogged = false;
+    this.userRequestForLoan = [];
     this.userLoans = [];
-    this.userRequestForLoan = null;
+    
   }
+
+  startingMoney = () => Math.floor(Math.random()*10000).toFixed(2);
 }
 
 class UsersManager {
@@ -59,4 +62,22 @@ class UsersManager {
 
     return false;
   };
+}
+
+class LoanRequested {
+
+  constructor(debtor, loanAmount, needToReturnInMonths, monthlyTax, loanInterest) {
+    this.debtor = debtor;
+    this.loanAmount = loanAmount;
+    this.loanAmountWithInterest = (loanAmount*loanInterest).toFixed(2);
+    this.needToReturnInMonths = needToReturnInMonths;
+    this.monthlyTax = (this.loanAmountWithInterest/this.needToReturnInMonths).toFixed(2);
+    this.isRequestApproved = false;
+  }
+
+  LoanRequest = () => {
+
+  }
+
+  
 }
