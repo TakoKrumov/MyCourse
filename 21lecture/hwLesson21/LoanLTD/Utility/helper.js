@@ -34,8 +34,18 @@ function doNotShow(notToShowIDs) {
   });
 }
 
-function promiceMaker () {
+function promiceMaker (trueOrFalseState,resolveParam,rejectParam) {
   let promise = new Promise ((resolve, reject) => {
-    
+    setTimeout(() => {
+      if(trueOrFalseState) {
+        resolve(resolveParam)
+      } 
+
+      reject(rejectParam)
+    })
   })
+
+  promise
+  .then (data =>  data)
+  .catch (error => error)
 }
