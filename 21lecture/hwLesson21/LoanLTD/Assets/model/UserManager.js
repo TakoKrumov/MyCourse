@@ -5,13 +5,13 @@ class User {
     this.email = email;
     this.moneyInBank = this.startingMoney();
     this.monthlyIncome = null;
-    this.userRequestForLoan = [];
     this.userLoans = [];
     
   }
 
   startingMoney = () => Math.floor(Math.random()*10000).toFixed(2);
 }
+
 
 class UsersManager {
   constructor() {
@@ -23,6 +23,11 @@ class UsersManager {
   dataBaseUsers = [
     new User("Admin", "Admin", "LoanSharkAdmin@loanShark.bite", null),
   ];
+
+  updateLoanHistory = (newLoan) => {
+    toLocalStorage(this.loanHistory.push(newLoan));
+  };
+
 
   checkIfSomeoneIsLogged = () => {
     let isThereSomeoneLogged = fromLocalStorage("loggedUser");

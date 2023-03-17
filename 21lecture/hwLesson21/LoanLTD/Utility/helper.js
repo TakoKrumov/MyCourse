@@ -45,7 +45,5 @@ function promiceMaker (trueOrFalseState,resolveParam,rejectParam) {
     })
   })
 
-  promise
-  .then (data =>  data)
-  .catch (error => error)
+  return promise;
 }

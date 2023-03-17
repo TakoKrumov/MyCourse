@@ -1,6 +1,6 @@
 class LoanShark {
-  constructor(name, interestRate, maxLoanGiven) {
-    this.name = name;
+  constructor(debtGiver, interestRate, maxLoanGiven) {
+    this.debtGiver = debtGiver;
     this.interestRate = interestRate;
     this.maxLoanGiven = maxLoanGiven;
     this.listOfDebtors = [];
@@ -41,7 +41,23 @@ class LoanManager {
 
 }
 
-class LoanRequested {
+class UserLoanRequest {
+  
+  constructor (loanSumRequest,timeForReturning) {
+    this.username = fromLocalStorage("loggedUser").username;
+    this.loanSumRequest = loanSumRequest;
+    this.timeForReturning = timeForReturning;
+    this.monthlyIncome = fromLocalStorage("loggedUser").monthlyIncome;
+    this.loanStatus = null;
+  }
+
+ createLoanRequest = (loanSumRequest,timeForReturning) => {
+  let newLoanRequest = new UserLoanRequest({loanSumRequest,timeForReturning});
+  return newLoanRequest;
+ };
+}
+
+class LoanOffer {
 
   constructor(debtor, loanAmount, loanInterest, needToReturnInMonths) {
     this.loanID = Math.floor(Math.random()*100000);
