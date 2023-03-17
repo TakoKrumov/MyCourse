@@ -117,9 +117,9 @@ class ViewController {
     checkPasswordsMatch(password, passwordConfirm);
     if (
       !!checkLength(username, 5, 12) ||
-      !!checkEmail ||
-      !!checkPasswordsMatch ||
-      !!checkLength
+      !! checkEmail(email) ||
+      !!checkPasswordsMatch(password, passwordConfirm) ||
+      !!checkLength(password, 5, 12)
     ) {
       return true;
     } else {

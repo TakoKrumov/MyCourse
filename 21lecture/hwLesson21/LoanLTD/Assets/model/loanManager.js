@@ -39,8 +39,25 @@ class LoanManager {
     return false;
   }
 
+}
 
+class LoanRequested {
 
+  constructor(debtor, loanAmount, loanInterest, needToReturnInMonths) {
+    this.loanID = Math.floor(Math.random()*100000);
+    this.debtor = debtor;
+    this.loanAmount = loanAmount;
+    this.loanAmountWithInterest = (loanAmount*loanInterest).toFixed(2);
+    this.needToReturnInMonths = needToReturnInMonths;
+    this.monthlyTax = (this.loanAmountWithInterest/this.needToReturnInMonths).toFixed(2);
+    this.isRequestApproved = false;
+  }
+
+  LoanRequest = () => {
+
+  }
+
+  
 }
 
 
