@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 620px;
+  gap:5px;
+}
+
+.label,
+.submit {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.formFields,
+.submit {
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid black;
+}
+
+#inputFromLogin:disabled,
+#inputFromMonthlyIncome:disabled {
+  background-color: white;
+  color: black;
+  opacity: 1;
+}

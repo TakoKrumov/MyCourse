@@ -1,0 +1,107 @@
+:root {
+  --main-width: 100vw; 
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  width: var(--main-width);
+  height: 100vh; 
+}
+
+.navigation {
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  
+}
+
+.navLinks {
+  text-decoration: none;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:90px;
+  height: 50px;
+  color: black;
+  border: black solid 1px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.navLinks:hover {
+  background-color: red;
+  font-weight: bold;
+  border: 2px black solid;
+}
+
+.sectionPage,
+.homePage {
+  height: 84vh;
+}
+
+.sectionPage,
+.homePage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcomeMsg {
+  display: none;
+  text-align: center;
+  width: 500px;
+}
+
+#welcomeMsg strong {
+  font-weight: bold;
+}
+
+#welcomeMsg a {
+  text-decoration: none;
+  color:black;
+  font-weight: bold;
+}
+
+#welcomeMsg a:hover { 
+  color: red;
+  font-weight: bold;
+}
+
+#home {
+  background-color: orange;
+}
+
+#homeForLoggedUsers {
+  display: none;
+}
+
+#login {
+  background-color: red;
+}
+
+#register {
+  background-color: lightgreen;
+}
+
+#loan {
+  background-color: blueviolet;
+}
+
+#profile {
+  background-color: silver;
+}
+
+.mainFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+}
