@@ -20,7 +20,9 @@ class UsersManager {
     this.loanHistory = [];
   }
 
-  myDataBase = [new User("Admin", "adminskiMail@admin.com", "Admin")];
+  myDataBase = !fromLocalStorage("MyDataBase") 
+                ? [new User("Admin", "adminskiMail@admin.com", "Admin")]
+                : keepLocalStorageUpdate("MyDataBase",this.myDataBase);
 
   checkIfSomeoneIsLogged = () => {
     let isThereSomeoneLogged = fromLocalStorage("loggedUser");

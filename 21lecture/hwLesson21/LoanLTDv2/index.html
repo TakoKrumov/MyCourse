@@ -171,19 +171,21 @@
             disabled
           />
           <label class="label">Request loan:</label>
-          <input
+          <input onclick=""
             type="number"
             class="formFields"
             min="1000"
+            max="150000"
+            
             placeholder="Hhow much you wanna take from the sharks?"
             id="loanRequested"
             required
           />
-          <small class="specialMSG">(Minimum request is for 1000lv)</small>
+          <small class="specialMSG">(Minimum request is for 1000lv and maximum is 150000)</small>
           <label class="label">Request time for returning:</label>
 
           <input
-            type="text"
+            type="number"
             min="6"
             class="formFields"
             id="returningPeriod"

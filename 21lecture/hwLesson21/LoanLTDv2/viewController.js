@@ -5,13 +5,12 @@ class ViewController {
     window.addEventListener("load", this.usersManager.checkIfSomeoneIsLogged);
     window.addEventListener("hashchange", this.handleHashChange);
     window.addEventListener("load", this.handleHashChange);
-    window.addEventListener(
-      "load",
-      keepLocalStorageUpdate("MyDataBase", this.usersManager.myDataBase)
-    );
-    window.addEventListener(
-      "load",
-      keepLocalStorageUpdate("LoanRequestDataBase",this.loanManager.loanDataBase)
+
+    window.addEventListener("load", (event) => {
+      event.preventDefault();
+      keepLocalStorageUpdate("loanRequestDataBase",myController.loanManager.loanDataBase)
+      keepLocalStorageUpdate("MyDataBase", myController.usersManager.myDataBase)
+    }
     );
   }
 
@@ -57,23 +56,27 @@ class ViewController {
     const noLoggedUser = document.getElementById("welcomeMsg")
     const whenUserLogged = document.getElementById("homeForLoggedUsers")
     const whenAdminIsLogged = document.getElementById("ifAdminLogged")
-    
+
     if(!fromLocalStorage("loggedUser")) {
       noLoggedUser.style.display = "inline-block";
       whenUserLogged.style.display = "none";
       whenAdminIsLogged.style.display = "none";
 
     } else if(fromLocalStorage("loggedUser").accName === "Admin") {  
-
       noLoggedUser.style.display = "none";
       whenUserLogged.style.display = "none";
       whenAdminIsLogged.style.display = "inline-block";
-      tableUpdate("loggedUser","LoanRequestDataBase");
+      tableUpdate("loggedUser","loanRequestDataBase");
+
     } else {
-      whenUserLogged.style.display = "inline-block";
       noLoggedUser.style.display = "none";
+      whenUserLogged.style.display = "inline-block";
       whenAdminIsLogged.style.display = "none";
-      tableUpdate("loggedUser","LoanRequestDataBase");
+      tableUpdate("loggedUser","loanRequestDataBase");
+      let promise = this.loanManager.loanApproval();
+      promise
+      .then(results => tableUpdate("loggedUser","loanRequestDataBase",results))
+      .catch(rejected => tableUpdate("loggedUser","loanRequestDataBase",rejected)) 
     }
   }
 
@@ -93,14 +96,18 @@ class ViewController {
         Number(event.target.elements.loanRequested.value).toFixed(2);
       let requestedPeriodForReturn =
         event.target.elements.returningPeriod.value;
-
-      let newLoanRequest = this.loanManager.askForLoan(requestForLoan, requestedPeriodForReturn); 
-      this.loanManager.loanDataBase = fromLocalStorage("LoanRequestDataBase")
-      this.loanManager.loanDataBase.push(newLoanRequest)
-      toLocalStorage("LoanRequestDataBase",this.loanManager.loanDataBase)
-      location.hash = "home";
-      loanForm.reset();
+      if(requestForLoan > 1000) {
+        let newLoanRequest = this.loanManager.askForLoan(requestForLoan, requestedPeriodForReturn); 
+        this.loanManager.loanDataBase = fromLocalStorage("loanRequestDataBase")
+        this.loanManager.loanDataBase.push(newLoanRequest)
+        toLocalStorage("loanRequestDataBase",this.loanManager.loanDataBase)
+        loanForm.reset();
+        location.hash = "home";
+      }
+      
+      
     });
+  
   };
 
   renderRegister = () => {

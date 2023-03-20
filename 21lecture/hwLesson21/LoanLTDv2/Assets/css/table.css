@@ -11,7 +11,36 @@
   font-style: italic; 
 }
 
+.cancelBtn {
+  width: 42px;
+  height: 42px;
+  margin-left: 10px;
+  position: relative;
+  border-radius: 6px;
+}
 
+.cancelBtn .tooltipText {
+  visibility: hidden;
+  width: 250px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 50px;
+}
+
+.cancelBtn:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.cancelBtn:hover .tooltipText {
+  visibility: visible;
+}
 
 table {
   width: 600px;
