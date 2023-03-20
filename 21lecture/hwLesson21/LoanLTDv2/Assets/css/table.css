@@ -6,6 +6,19 @@
   font-size: 20px;
 }
 
+h3 {
+  text-align: center;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#offerTable {
+  margin-top: 40px;
+  display:none;
+}
+
 #tableHeading strong {
   font-weight: bold;
   font-style: italic; 
@@ -14,14 +27,25 @@
 .cancelBtn {
   width: 42px;
   height: 42px;
-  margin-left: 10px;
-  position: relative;
-  border-radius: 6px;
 }
 
-.cancelBtn .tooltipText {
+.takeOffer {
+  width: 62px;
+  height: 52px;
+}
+
+.cancelBtn,
+.takeOffer {
+  position: relative;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.cancelBtn .tooltipText,
+.takeOffer .tooltipText {
   visibility: hidden;
-  width: 250px;
+  max-width: 250px;
+  min-width: 125px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -33,12 +57,14 @@
   left: 50px;
 }
 
-.cancelBtn:hover {
+.cancelBtn:hover,
+.takeOffer:hover {
   cursor: pointer;
   background-color: red;
 }
 
-.cancelBtn:hover .tooltipText {
+.cancelBtn:hover .tooltipText, 
+.takeOffer:hover .tooltipText {
   visibility: visible;
 }
 

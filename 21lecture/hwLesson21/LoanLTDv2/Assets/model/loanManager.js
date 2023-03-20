@@ -30,6 +30,7 @@ class LanderManager {
     new Lander ("Butch", 0.09, 100000),
     new Lander ("$crooge", 0.11, 150000)
   ]
+  approvedLoans = !fromLocalStorage("approvedLoans") ? [] : fromLocalStorage("approvedLoans")
   offersDataBase = [];
   loanDataBase = !fromLocalStorage("loanRequestDataBase") 
   ? [] : keepLocalStorageUpdate("loanRequestDataBase", this.loanDataBase);
@@ -60,10 +61,12 @@ class LanderManager {
       this.landerList[2];
     }
     requests = requests.map(request => {
+      request.loanTotalReturn = (parseFloat(request.loanRequest)+parseFloat(request.loanRequest)*request.loanInterestRate)
       let debtorMonthlyPayment = 
-      (request.loanRequest+request.loanRequest*(request.loanInterestRate*100))/request.loanReturningPeriod;
+      request.loanTotalReturn/request.loanReturningPeriod;
 
       if (debtorMonthlyPayment < request.debtorMonthlyIncome/2) {
+        
         request.loanRequestMonthlyPayment
         = debtorMonthlyPayment.toFixed(2);
         request.loanStatus = true;

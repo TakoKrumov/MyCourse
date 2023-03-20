@@ -35,7 +35,7 @@
         <div id="homeForLoggedUsers">
           <h3 id="tableHeading"></h3>
           <table>
-            <thead>
+            <thead id="tableHead">
               <tr>
                 <th>ID</th>
                 <th>Requested Amount</th>
@@ -43,7 +43,7 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody id="tableBody">
+            <tbody id="tableBody" class="tableBody">
               <!-- <tr>
               <td>12441241</td>
               <td>2000000</td>
@@ -53,7 +53,24 @@
             </tr> -->
             </tbody>
           </table>
+          <div id="offerTable">
+            <table>
+            <thead id="ifOfferIsApproved">
+              <tr>
+                <th>Loan Giver</th>
+                <th>Loan Amount</th>
+                <th>Loan monthly payment</th>
+                <th>Months for repayment</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="tableBodyApproved" class="tableBody">
+
+            </tbody>
+          </table>
+          </div>
         </div>
+
         <div id="ifAdminLogged">
           <h3 id="tableHeading">Admin Table of Debts</h3>
           <table>
@@ -66,9 +83,7 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody id="tableBody">
-              
-            </tbody>
+            <tbody id="tableBody"></tbody>
           </table>
         </div>
       </section>
@@ -171,17 +186,19 @@
             disabled
           />
           <label class="label">Request loan:</label>
-          <input onclick=""
+          <input
+            onclick=""
             type="number"
             class="formFields"
             min="1000"
             max="150000"
-            
             placeholder="Hhow much you wanna take from the sharks?"
             id="loanRequested"
             required
           />
-          <small class="specialMSG">(Minimum request is for 1000lv and maximum is 150000)</small>
+          <small class="specialMSG"
+            >(Minimum request is for 1000lv and maximum is 150000)</small
+          >
           <label class="label">Request time for returning:</label>
 
           <input
