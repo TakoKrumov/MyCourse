@@ -33,10 +33,10 @@ class UsersManager {
     return false;
   };
 
-  login = ({accName,accPassword} , myDataBase) => {
+  login = ({accName, accPassword} , myDataBase) => {
     
     let existingUser = fromLocalStorage(myDataBase).find(
-      (account) => account.accName.toLowerCase().trim() === accName.toLowerCase().trim() && account.accPassword.toLowerCase().trim() === accPassword.toLowerCase().trim());
+      (account) => account.accName === accName && account.accPassword === accPassword); //.toLowerCase() removed .trim() removed
     if (existingUser) {
       this.loggedUser = existingUser;
       

@@ -123,6 +123,7 @@ class ViewController {
                       if (tbBody.children[i].id !== rowID) {
                         let lastOffer = fromLocalStorage("offers").reduce(
                           (element, accumulator) => {
+                         
                             return element === accumulator
                               ? `${rowID}`
                               : `${rowID}`;
