@@ -27,15 +27,23 @@ function resultsFromParty (data, container) {
         card.classList.add = "card";
         card.style.width = "200px";
 
-        card.innerHTML = `<img src=${party.picture} class="card-img-top" alt="...">
+        card.innerHTML = 
+        `<img src=${party.picture} class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${party.name}</h5>
           <p class="card-text">${party.slogan}</p>
-          <a href="#" class="btn btn-primary" id="details">Details</a>
-          <a href="#" class="btn btn-primary" id="vote">Vote</a>
+          
         </div>`;
 
-        container.append(card);
+        let detailsBtn = document.createElement('a')
+        detailsBtn.classList.add("btn","btn-primary")
+        detailsBtn.innerText = 'Details'
+        let voteBtn = document.createElement('a')
+        voteBtn.classList.add("btn","btn-primary")
+        container.append(card)
+        voteBtn.innerText = 'Vote'
+
+        card.append(detailsBtn, voteBtn)
       });
 }
 

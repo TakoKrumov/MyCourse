@@ -5,10 +5,12 @@ class ViewController {
 
     this.userManager = new UserManager();
     this.partiesManager = new PartiesManger();
+    this.detailsManager = new DetailsManager();
 
     this.registerController = new RegisterController(this.userManager);
     this.loginController = new LoginController(this.userManager);
     this.listingsController = new ListingsController(this.partiesManager);
+    
   }
 
   handleHashChange = (e) => {
