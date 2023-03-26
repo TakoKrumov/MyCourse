@@ -6,14 +6,14 @@ class LogoutController {
 
   render = () => {
     let logOutBtn = getElement("logoutLink");
-
+    const sessionId = fromLocalStorage('loggedUser').sessionId
     console.log;
     logOutBtn.onclick = (event) => {
       event.preventDefault();
       this.userManager.loggedUser = null;
-      const id = fromLocalStorage("loggedUser").sessionId;
+
       this.userManager
-        .logout(id)
+        .logout(sessionId)
         .then((data) => {
           removeFromLocalStorage("loggedUser");
           viewController.handleHashChange();

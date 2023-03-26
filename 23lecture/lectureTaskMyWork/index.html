@@ -15,8 +15,10 @@
     <script src="./assets/utilities/utilities.js"></script>
     <script src="./controllers/loginController.js"></script>
     <script src="./controllers/registerController.js"></script>
-    <script src="./controllers/logoutManager.js"></script>
+    <script src="./controllers/logoutController.js"></script>
+    <script src="./controllers/listingsController.js"></script>
     <script src="./models/UserManager.js"></script>
+    <script src="./models/PartiesManager.js"></script>
   </head>
   <body>
     <header class="myHeader">
@@ -24,7 +26,7 @@
         <div class="container d-flex flex-wrap">
           <div class="myNav" id="loggedNav">
             <a href="#home" id="homeLink" class="nav-link link-dark px-2 active" >Home</a>
-            <a href="#something" id="somethingLink" class="nav-link link-dark px-2">Something</a>
+            <!-- <a href="#something" id="somethingLink" class="nav-link link-dark px-2">Something</a> -->
             <a href="" id="logoutLink" class="nav-link link-dark px-2">Logout</a>
           </div>
           <div class="myNav" id="guestNav">
@@ -139,9 +141,15 @@
       </form>
     </div>
 
-    <div class="page" id="home"></div>
+    <div class="page" id="home">
+      <input type="text" name="" id="searchPartiesInput">
 
-    <div class="page" id="something"></div>
+      <div id="partiesResult">
+        
+      </div>
+    </div>
+
+    <!-- <div class="page" id="something"></div> -->
 
     <div id="404" class="page">
       <div id="errorPageMsg">What you are looking for wasn't found!<br>Try again later or <a href="#login">Log with your account</a>!</div>

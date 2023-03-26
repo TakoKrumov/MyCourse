@@ -1,0 +1,11 @@
+#home {
+  flex-direction: column;
+}
+
+#partiesResult {
+  height: 85vh;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}

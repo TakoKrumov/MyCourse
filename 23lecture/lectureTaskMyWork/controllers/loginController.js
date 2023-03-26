@@ -25,6 +25,7 @@ class LoginController {
           errorMsg.innerHTML = `<small id="errorMsg" class="small"
           >Login with your account<br/>If you don't have account go to
           <a href="#register" class="smallLink">Sign up</a>!<br/>Field with&nbsp;<span class="redStar">*</span>&nbsp;are required!</small>`
+          form.reset();
         })
         .catch((error) => {
           let errorMsg = getElement("errorMsg")
@@ -32,7 +33,7 @@ class LoginController {
           errorMsg.innerHTML = `<small>${error.message}! <br>Your password or username are incorrect! <br>Try again!</small>`;
         });
 
-      form.reset();
+      
     };
   };
 }
