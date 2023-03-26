@@ -1,0 +1,58 @@
+@import url(form.css);
+@import url(nav.css);
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #a37e93,
+    #9d7d99,
+    #957d9e,
+    #8b7ea3,
+    #7f7fa7,
+    #7281a8,
+    #6683a8,
+    #5a85a5,
+    #53879e,
+    #528896,
+    #55888d,
+    #5c8784
+  );
+}
+
+.page {
+  min-width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guest {
+  justify-content: center;
+}
+
+#errorPageMsg {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#errorPageMsg a {
+  text-decoration: none;
+  color:black;
+}
+
+#errorPageMsg a:hover {
+  color:red;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  color: black;
+  height: 5vh;
+  background-color: rgba(248,249,250);
+}

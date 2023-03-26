@@ -6,6 +6,4 @@ function debounce(func, seconds) {
         timerId = setTimeout(func, seconds, event);
     }
 
-   
-
 }
