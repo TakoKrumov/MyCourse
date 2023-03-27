@@ -22,13 +22,15 @@ class ViewController {
         hash = assistHandleHashChange(PAGE_IDS_LOGGED, LINK_LOGGED)
         doNotShow(LOGGED_DO_NOT_SEE)
       }
-   
+      let form = getElement(hash + 'Form')
       switch (hash) {
         case "register":
           this.registerController.render();
+          
           break;
         case "login":
           this.loginController.render();
+          
           break;
         case "home":
           break;

@@ -18,6 +18,9 @@ class LoginController {
       this.userManager
         .login(inputUsername, inputPassword)
         .then((data) => {
+          let welcomeMessage = getElement('welcomeMessage')
+          welcomeMessage.innerText = `Welcome ${inputUsername}!`
+
           console.log(data);
           location.hash = "home";
           let errorMsg = getElement('errorMsg')
