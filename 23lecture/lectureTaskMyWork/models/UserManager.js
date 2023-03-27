@@ -5,19 +5,20 @@ class UserManager {
 
   loggedUser = null;
 
-  // vote = (partyId) => {
+  vote = (partyId) => {
 
-  //     const sessionId = fromLocalStorage('loggedUser').sessionId;
+      const sessionId = fromLocalStorage('loggedUser').sessionId;
 
-  //     return makeAPICall(SERVER_URL + `/vote/${partyId}`, {
-  //         method: 'POST',
-  //         headers: {
-  //             'identity': sessionId,
-  //             "Content-type": "application/json"
-  //         }
-  //     })
+      return makeAPICall(SERVER_URL + `/vote/${partyId}`, {
+          method: 'POST',
+          headers: {
+              'identity': sessionId,
+              "Content-type": "application/json"
+          }
+      })
 
-  // }
+  }
+
   logout = (id) => {
     return makeAPICall(SERVER_URL + "/logout", {
       method: "POST",

@@ -1,6 +1,8 @@
 class ListingController {
-  constructor(partiesManager, userManager) {
+  constructor(partiesManager, detailsManager, detailsController, userManager) {
     this.partiesManager = partiesManager;
+    this.detailsManager = detailsManager;
+    this.detailsController = detailsController;
     this.userManager = userManager;
   }
 
@@ -68,11 +70,14 @@ class ListingController {
 
       detailsBtn.onclick = (event) => {
         event.preventDefault();
-
+      
         this.detailsManager.getDetails(party.id).then((result) => {
+          console.log(result);
           this.detailsController.render(result);
         });
 
+        const details = getElement('details')
+        details.style.display = 'flex';
         location.hash = "details";
       };
 

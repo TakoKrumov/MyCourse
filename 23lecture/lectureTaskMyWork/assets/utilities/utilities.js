@@ -94,4 +94,9 @@ function deepCopy(obj) {
   return copy;
 }
 
+function createElement (element, newClass) {
+  const newElement = document.createElement(element);
+  newElement.classList.add(newClass);
 
+  return newElement;
+}

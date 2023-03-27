@@ -1,0 +1,39 @@
+#details {
+  display: none;
+  width: 100vw;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerDetails {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  min-height: 10vh;
+  padding: 5px;
+  gap: 10px;
+  margin: 20px;
+  border: 1px black solid;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.partyImg {
+  max-height: 70vh;
+  max-width: 40vw;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  padding:0 50px 25px;
+}
+
+.partySlogan,
+.partyAgitation {
+  font-weight: bold;
+  font-style: italic;
+}

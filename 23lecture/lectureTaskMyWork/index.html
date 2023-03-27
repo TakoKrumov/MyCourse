@@ -11,27 +11,46 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/style/style.css" />
+    
     <script src="./assets/utilities/constants.js"></script>
     <script src="./assets/utilities/utilities.js"></script>
+    
     <script src="./controllers/loginController.js"></script>
     <script src="./controllers/registerController.js"></script>
     <script src="./controllers/logoutController.js"></script>
     <script src="./controllers/listingsController.js"></script>
+    <script src="./controllers/detailsController.js"></script>
+    <script src="./controllers/resultsController.js"></script>   
+    
     <script src="./models/UserManager.js"></script>
     <script src="./models/PartiesManager.js"></script>
+    <script src="./models/DetailsManager.js"></script>
+    <script src="./models/ResultsManager.js"></script>
+  
   </head>
   <body>
     <header class="myHeader">
       <nav class="py-2 bg-light border-bottom">
         <div class="container d-flex flex-wrap">
           <div class="myNav" id="loggedNav">
-            <a href="#home" id="homeLink" class="nav-link link-dark px-2 active" >Home</a>
+            <a href="#home" id="homeLink" class="nav-link link-dark px-2 active"
+              >Home</a
+            >
             <!-- <a href="#something" id="somethingLink" class="nav-link link-dark px-2">Something</a> -->
-            <a href="" id="logoutLink" class="nav-link link-dark px-2">Logout</a>
+            <a href="" id="logoutLink" class="nav-link link-dark px-2"
+              >Logout</a
+            >
           </div>
           <div class="myNav" id="guestNav">
-            <a href="#login" id="loginLink" class="nav-link link-dark px-2">Login</a>
-            <a href="#register" id="registerLink" class="nav-link link-dark px-2">Sign up</a>
+            <a href="#login" id="loginLink" class="nav-link link-dark px-2"
+              >Login</a
+            >
+            <a
+              href="#register"
+              id="registerLink"
+              class="nav-link link-dark px-2"
+              >Sign up</a
+            >
           </div>
         </div>
       </nav>
@@ -39,7 +58,7 @@
 
     <div class="page forms" id="login">
       <form id="loginForm" class="form">
-        <h1 class="h3 mb-3 fw-normal">Please sign in: </h1>
+        <h1 class="h3 mb-3 fw-normal">Please sign in:</h1>
 
         <div class="form-floating">
           <input
@@ -52,7 +71,9 @@
             maxlength="25"
             required
           />
-          <label for="floatingInput">Username <span class="redStar">*</span></label>
+          <label for="floatingInput"
+            >Username <span class="redStar">*</span></label
+          >
         </div>
         <div class="form-floating">
           <input
@@ -65,7 +86,9 @@
             maxlength="25"
             required
           />
-          <label for="floatingPassword">Password <span class="redStar">*</span></label>
+          <label for="floatingPassword"
+            >Password <span class="redStar">*</span></label
+          >
         </div>
 
         <div class="checkbox mb-3">
@@ -77,8 +100,10 @@
           Sign in
         </button>
         <small id="errorMsg" class="small"
-          >Login with your account<br/>If you don't have account go to
-          <a href="#register" class="smallLink">Sign up</a>!<br/>Field with&nbsp;<span class="redStar">*</span>&nbsp;are required!</small>
+          >Login with your account<br />If you don't have account go to
+          <a href="#register" class="smallLink">Sign up</a>!<br />Field
+          with&nbsp;<span class="redStar">*</span>&nbsp;are required!</small
+        >
         <p class="mt-5 mb-3 text-body-secondary align">Tako Krumov © 2023</p>
       </form>
     </div>
@@ -98,8 +123,12 @@
             maxlength="25"
             required
           />
-          <label for="floatingInput">Username <span class="redStar">*</span></label>
-          <small id="errorMsgUsernameReg" class="small">Username must be at least 5<br>and maximum 25 characters</small>
+          <label for="floatingInput"
+            >Username <span class="redStar">*</span></label
+          >
+          <small id="errorMsgUsernameReg" class="small"
+            >Username must be at least 5<br />and maximum 25 characters</small
+          >
         </div>
         <div class="form-floating">
           <input
@@ -112,8 +141,12 @@
             maxlength="25"
             required
           />
-          <label for="floatingPassword">Password <span class="redStar">*</span></label>
-          <small id="errorMsgPassword" class="small">Password must be at least 6<br>and maximum 25 characters</small>
+          <label for="floatingPassword"
+            >Password <span class="redStar">*</span></label
+          >
+          <small id="errorMsgPassword" class="small"
+            >Password must be at least 6<br />and maximum 25 characters</small
+          >
         </div>
 
         <div class="form-floating">
@@ -127,38 +160,57 @@
             maxlength="25"
             required
           />
-          <label for="floatingPassword">Confirm Password <span class="redStar">*</span></label>
-          <small id="errorMsgPasswordConf" class="small">Confirm password must<br>be same as password!</small>
+          <label for="floatingPassword"
+            >Confirm Password <span class="redStar">*</span></label
+          >
+          <small id="errorMsgPasswordConf" class="small"
+            >Confirm password must<br />be same as password!</small
+          >
         </div>
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">
           Sign in
         </button>
         <small id="errorMsg" class="small"
-          >Field with&nbsp;<span class="redStar">*</span>&nbsp;are required!<br/>&nbsp;
-          <br/>&nbsp;</small>
-        <p class="mt-5 mb-3 text-body-secondary align" >Tako Krumov © 2023</p>
+          >Field with&nbsp;<span class="redStar">*</span>&nbsp;are required!<br />&nbsp;
+          <br />&nbsp;</small
+        >
+        <p class="mt-5 mb-3 text-body-secondary align">Tako Krumov © 2023</p>
       </form>
     </div>
 
-    <div class="page" id="home">
-      <input type="text" name="" id="searchPartiesInput">
-
-      <div id="partiesResult">
-        
+    <div class="mainPage" id="home">
+      <div class="form-floating">
+        <input
+          name="inputPasswordConfirm"
+          type="text"
+          class="form-control"
+          id="searchPartiesInput"
+          placeholder="Search"
+        />
+        <label for="searchPartiesInput">Search for parties</label>
       </div>
+
+      <!-- <input type="text" name="" id="searchPartiesInput" placeholder="search">
+      <label for="floatingSearch">Search</label> -->
+
+      <div id="partiesResult"></div>
     </div>
 
-    <!-- <div class="page" id="something"></div> -->
+    <div id="details"></div>
 
-    <div id="404" class="page">
-      <div id="errorPageMsg">What you are looking for wasn't found!<br>Try again later or <a href="#login">Log with your account</a>!</div>
-      
+    <!-- <div class="mainPage" id="something"></div> -->
+
+    <div id="404" class="mainPage">
+      <div id="errorPageGuest" class="errorPageMsg">
+        What you are looking for wasn't found!<br />Try again later or
+        <a href="#login">Log with your account</a>!
+      </div>
+      <div id="errorPageUser" class="errorPageMsg"></div>
     </div>
-    <footer class="footer">
-      
-        <span class="text-muted">My Third Exam by Tako Krumov 28.03.2023 &COPY;</span>
-      
+
+    <footer class="mainFooter">
+      <span>My Third Exam by Tako Krumov 28.03.2023 &COPY;</span>
     </footer>
 
     <script
