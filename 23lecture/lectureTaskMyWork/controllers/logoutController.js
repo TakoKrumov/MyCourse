@@ -6,10 +6,10 @@ class LogoutController {
 
   render = () => {
     let logOutBtn = getElement("logoutLink");
-    const sessionId = fromLocalStorage('loggedUser').sessionId
-    console.log;
+    
     logOutBtn.onclick = (event) => {
       event.preventDefault();
+      const sessionId = fromLocalStorage('loggedUser').sessionId
       this.userManager.loggedUser = null;
 
       this.userManager
