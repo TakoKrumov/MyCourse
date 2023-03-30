@@ -18,7 +18,7 @@ class ListingController {
 
     search.oninput = debounce((event) => {
       const keyword = event.target.value;
-
+      console.log(keyword)
       this.partiesManager.search(keyword).then((result) => {
         partiesContainer.innerHTML = "";
         this.renderParties(result, partiesContainer);

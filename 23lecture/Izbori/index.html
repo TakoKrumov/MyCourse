@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elections 2023</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="./utilities.js"></script>
+    <script src="./constants.js"></script>
+    <script src="./UserManager.js"></script>
+    <script src="./VoteManager.js"></script>
+    <style>
+
+        #loginForm,
+        #register {
+            width: 300px;
+            margin: auto;
+        }
+
+        #navigation {
+            display: none;
+            justify-content: space-between;
+        }
+        #navigation a,
+        #helloDiv {
+            text-decoration: none;
+            color: green;
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px
+        }
+
+        #navigation a:hover {
+            color: yellowgreen;
+            border: 2px solid green;
+            border-radius: 10%;
+
+        }
+
+        #searchParty {
+          margin: 5px;
+        }
+
+        #listingsContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3px;
+        }
+
+        #detailsContainer {
+          display: flex;
+        }
+
+        #detailsContainerLeft,
+        #detailsContainerRight {
+          display: flex;
+          flex-direction: column;
+
+        }
+
+
+    </style>
+
+
+</head>
+  <body>
+
+    <nav id="navigation">
+        <a href="#listings">Listings</a>
+        <div id="helloDiv"></div>
+        <a id="logout">Logout</a>
+    </nav>
+
+    <div id="login" class="text-center">
+        <form class="form-signin" id="loginForm">
+            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            <div class="checkbox mb-3">
+              <label>
+                <a href="#register">Don't have an account yet ?</a>
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </form>
+    </div>
+
+    <div id="register" class="text-center">
+
+        <form class="form-signin" id="registerForm">
+            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="username" class="sr-only">Email address</label>
+            <input type="text" name="username" class="form-control" placeholder="Email address" required="" autofocus="">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            <label for="conmfirmPassword" class="sr-only">Confirm Password</label>
+            <input type="password" name="conmfirmPassword" class="form-control" placeholder="Confirm Password" required="">
+            <div class="checkbox mb-3">
+              <label>
+                <a href="#login">Already have an account ?</a>
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          </form>
+    </div>
+
+    <div id="listings">
+      
+      <input type="text" id="searchParty" placeholder="Search">
+      <div id="listingsContainer"></div>
+              
+    </div>
+
+    <div id="details">
+      <div id="detailsContainer">
+        <div id="detailsContainerLeft"></div>
+        <div id="detailsContainerRight"></div>
+      </div>
+    </div>
+
+    <div id="results">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Party</th>
+            <th scope="col">Result</th>
+          </tr>
+        </thead>
+        <tbody id="resultsTable"></tbody>
+      </table>
+    </div>
+
+    <div id="404">Page not found !</div>
+    <script src="./ViewController.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -5,10 +5,13 @@ class ViewController {
       window.addEventListener('hashchange', this.handleHashChange);
 
       this.userManager = new UserManager();
-      
+      this.cocktailsManager = new CocktailsManager();
+
       this.loginController = new LoginController (this.userManager);
       this.registerController = new RegisterController (this.userManager);
       this.logoutController = new LogoutController(this.userManager);
+      this.cocktailsController = new CocktailsController(this.cocktailsManager);
+      
   }
 
   handleHashChange = () => {
@@ -32,12 +35,14 @@ class ViewController {
           this.loginController.render();
           
           break;
-        case "home":
+        case "cocktails":
+          this.cocktailsController.renderCocktails();
           break;
         case "something":
           break;
       }
   }
+
 
 }
 

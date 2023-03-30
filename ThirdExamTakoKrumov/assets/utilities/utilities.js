@@ -39,47 +39,54 @@ function assistHandleHashChange(pagesID, navLinks) {
 
 function doNotShow(notToShowIDs) {
   notToShowIDs.forEach((notToShow) => {
-    let page = document.getElementById(notToShow);
+    let page = getElement(notToShow);
     page.style.display = "none";
   });
 }
 
-function makeAPICall(url, options) {
-  return fetch(url, options).then((response) => {
-    if (response.ok) {
-      console.log(`response from MakeAPICall:`, response);
-      return new Promise((resolve, reject) => {
-        response
-          .json()
-          .then((result) => resolve(result))
-          .catch((error) => resolve(error));
-      });
-    }
+function createElement (element, className) {
+  const newElement = document.createElement(element)
+  newElement.classList.add(className)
 
-    return new Promise((resolve, reject) => {
-      response.json().then((body) => {
-        console.log(`reject from MakeAPICall:`, body);
-        reject(new Error(body.message));
-      });
-    });
-  });
+  return newElement
 }
 
-// normal api call for normal api
-// function makeAPICall (url, options) {
-//   return fetch(url, options)
-//       .then(response => {
-//        if(response.ok){
-//            return response.json();
-//        }
+// function makeAPICall(url, options) {
+//   return fetch(url, options).then((response) => {
+//     if (response.ok) {
+//       console.log(`response from MakeAPICall:`, response);
+//       return new Promise((resolve, reject) => {
+//         response
+//           .json()
+//           .then((result) => resolve(result))
+//           .catch((error) => resolve(error));
+//       });
+//     }
 
-//        return new Promise ((resolve, reject) => {
-//           response.json().then(body => {
-//               reject(new Error (body.message))   
-//            })
-//        })
-//    })
+//     return new Promise((resolve, reject) => {
+//       response.json().then((body) => {
+//         console.log(`reject from MakeAPICall:`, body);
+//         reject(new Error(body.message));
+//       });
+//     });
+//   });
 // }
+
+
+function makeAPICall (url, options) {
+  return fetch(url, options)
+      .then(response => {
+       if(response.ok){
+           return response.json();
+       }
+
+       return new Promise ((resolve, reject) => {
+          response.json().then(body => {
+              reject(new Error (body.message))   
+           })
+       })
+   })
+}
 
 function debounce(action, seconds) {
   let timerId = null;

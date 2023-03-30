@@ -22,7 +22,7 @@ class LoginController {
           welcomeMessage.innerText = `Welcome ${inputUsername}!`
 
           console.log(data);
-          location.hash = "home";
+          location.hash = "cocktails";
           let errorMsg = getElement('errorMsg')
           errorMsg.classList.remove('errorMsg')
           errorMsg.innerHTML = `<small id="errorMsg" class="small"

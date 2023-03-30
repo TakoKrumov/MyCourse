@@ -1,0 +1,73 @@
+#cocktails {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+}
+
+#showCocktails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  
+}
+
+#details {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.cocktailImgDet {
+  width: 300px;
+  height: 300px;
+}
+
+.containerDetails {
+  display:flex;
+  width: 100vw;
+  height: 45vh;
+  flex-direction: column;
+  border: black solid 1px;
+  border-radius: 10px;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+#leftDetailsContainer { 
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 200px;
+  min-height: 360px;
+  border-radius: 10px ;
+  gap: 3px;
+}
+
+#searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.cocktailOfTheDay {
+  border: red solid 2px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.cocktailImg {
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
