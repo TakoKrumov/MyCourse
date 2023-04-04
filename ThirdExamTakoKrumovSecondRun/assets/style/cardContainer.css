@@ -1,0 +1,39 @@
+.searchResult {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin:5px
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-height: 250px;
+  border: black solid 1px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.cocktailImg {
+  border-radius: 10px;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.myBtn {
+  width: 85px;
+  height: 55px;
+}
+
+.favCocktails {
+  border: solid green 3px;
+}
+
+#cocktailOfTheDay {
+  border: solid red 2px;
+}

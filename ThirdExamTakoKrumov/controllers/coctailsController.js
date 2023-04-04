@@ -110,32 +110,32 @@ class CocktailsController {
 
     const favBtn = createElement("button", "btn");
     favBtn.classList.add("btn-primary");
-    this.cocktailsManager.getFavCocktails(cocktail.idDrink)
-    .then(fav => {
+    // this.cocktailsManager.getFavCocktails(cocktail.idDrink)
+    // .then(fav => {
       
-      fav.favorites.filter( element => {
+    //   fav.favorites.filter( element => {
         
-        if(element === cocktail.idDrink) {
-          favBtn.innerText = "Remove";
-          favBtn.id = "removeBtn";
-          favBtn.onclick = (event) => {
-            event.preventDefault();
+    //     if(element === cocktail.idDrink) {
+    //       favBtn.innerText = "Remove";
+    //       favBtn.id = "removeBtn";
+    //       favBtn.onclick = (event) => {
+    //         event.preventDefault();
       
-              this.cocktailsManager.removeFromFav(cocktail.idDrink)
+    //           this.cocktailsManager.removeFromFav(cocktail.idDrink)
             
-          }
-        } else {
-          favBtn.innerText = "Favorites";
-          favBtn.id = "favBtn";
-          favBtn.onclick = (event) => {
-            event.preventDefault();
+    //       }
+    //     } else {
+    //       favBtn.innerText = "Favorites";
+    //       favBtn.id = "favBtn";
+    //       favBtn.onclick = (event) => {
+    //         event.preventDefault();
       
-              this.cocktailsManager.addToFavorites(cocktail.idDrink)
+    //           this.cocktailsManager.addToFavorites(cocktail.idDrink)
             
-          }
-        }
-      })
-    })
+    //       }
+    //     }
+    //   })
+    // })
 
 
     const detailsBtn = createElement("button", "btn");
